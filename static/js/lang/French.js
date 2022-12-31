@@ -25,7 +25,7 @@ const fr = {
     "desc": "Jeune diplômé, j’ai une expérience de 3 ans en tant que Développeur Web & Mobile ce qui m’a permit de particier à plusieurs projets. Je suis un vrai passionné et ai un bon sens relationnel que je sauraimettre au service de votre entreprise."
   },
   "about": {
-    "desc": "<p>Hello! My name is Fortunatus EK. Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores doloremque distinctio molestiae vel ipsam iusto dicta, et eum dolores minus quam qui aperiam totam fugiat exercitationem harum accusamus repellat explicabo. Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.</p><p>Lorem ipsum dolor sit amet consectetur adipisicing <span class='color-link'>Asperiores doloremque distinctio molestiae</span> vel ipsam iusto dicta, <span class='color-link'>et eum dolores minus quam qui aperiam</span> totam <span class='color-link'>fugiat exercitationem harum accusamus repellat explicabo</span>. Lorem ipsum dolor sit amet consectetur adipisicing elit.Lorem ipsum dolor sit amet consectetur adipisicing elit.</p><p>Lorem ipsum dolor sit amet consectetur <span class='color-link'>adipisicing elit</span>. Asperiores doloremque distinctio molestiae vel ipsam iusto dicta, et eum dolores minus quam qui aperiam totam fugiat exercitationem harum accusamus repellat explicabo!</p><p>La liste de quelques technologies que j'ai eu a utilisé : </p>",
+    "desc": "<p>Après avoir obtenu le diplôme du Technicien en Installation et Maintenance Informatique en 2021, j'ai effectué divers stages professionnels et travaillé sous contrat à durée déterminée dans diverses entreprises exerçant dans les domaines de la <span class='color-link'>Programmation mobile & web</span>. J'ai vendu mon premier logiciel lorsque j'étais Lycéen. Pour le développement d'applications et de sites web, j'utilise principalement <span class='color-link'>laravel et symfony</span> pour la création, la refonte et la maintenance de sites web et d'applications web sans oublier les outils essentiels du développent front-end tels que html, css et javascript. Je maîtrise également <span class='color-link'>les technologies Node.js, AngularJS, VueJS, ReactJs, Python (Django)</span>. Je sais concevoir des applications de gestion (stocks, ressources humaines, facturation, ERP, CRM) pour les entreprises quelque soient leur taille. Je peux également développer des applications qui peuvent permettre d'interagir avec des cartes ou des plans.J'ai développé une application de gestion des ressources humaines et une application de facturation pour le compte de BHT SARL qui compte une dizaine de boutiques. J'ai été <span class='color-link'>developpeur backend</span> au sein de la société Ellipse Software ce qui m'a permit de travailler en équipe sur plusieurs projets intérressants. Actuellement je suis développeur fullstack au sein de la startup FuturaVision qui est spécialisée dans <span class='color-link'>la conception d'application Web & mobile.</p>",
 
     "techs": [
       "<i class='fab fa-html5 me-2'></i><span>HTML5/CSS3</span>",
@@ -83,7 +83,7 @@ const fr = {
       'classRow': '',
       'classDescText': 'text-end',
       'style': {right: '20%'},
-      'description' : "Neptune is a stock management web application with automatic billing system, inventory management of various shops.",
+      'description' : "Neptune est une application web de gestion de stock avec système de facturation automatique, gestion des stocks des différentes boutiques.",
       'techs': ['HTML5', 'CSS', 'JavaScript', 'Jquery', 'PHP', 'CodeIgniter4'],
       'links': {
         'github' : 'http://github.com/v1p3r75/Neptune',
@@ -97,7 +97,7 @@ const fr = {
       'classRow': 'flex-lg-row-reverse',
       'classDescText': 'text-start',
       'style': {right:'0'},
-      'description' : " A small JavaScript library for common tasks such as Carousel, Exception, Animation handler and more...",
+      'description' : "Une petite bibliothèque JavaScript pour les tâches courantes telles que le carrousel, l'exception, le gestionnaire d'animation et plus encore...",
       'techs': ['HTML5', 'CSS', 'JavaScript', 'ES6+'],
       'links': {
         'github' : 'http://github.com/v1p3r75/FuturaJS',
@@ -111,7 +111,7 @@ const fr = {
       'classRow': '',
       'classDescText': 'text-end',
       'style': {right: '20%'},
-      'description' : "comfortable is a simple php framework that allows developers to quickly integrate their sites or web applications in a secure and very simple way.",
+      'description' : "Comfortable est un framework php simple qui permet aux développeurs d'intégrer rapidement leurs sites ou applications web de manière sécurisée et très simple.",
       'techs': ['PHP', 'Apache 2', 'HTML5', 'CSS', 'JavaScript',],
       'links': {
         'github' : 'http://github.com/v1p3r75/Comfortable',
