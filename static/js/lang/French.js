@@ -16,6 +16,7 @@ const fr = {
       { "name" : "Contacts", "tag": "#Contacts"},
     ],
     "navsTag": ["#About","#Experiences", "#Projects", "#Contacts"],
+    "cvText": "Mon CV",
     "cvLink": "/static/files/cv-elfried-fortunatus-kidje.pdf"
   },
   "banner": {

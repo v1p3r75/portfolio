@@ -15,6 +15,7 @@ const en = {
         { "name" : "Contact", "tag": "#Contacts"},
       ],
       "navsTag": ["#About","#Experiences", "#Projects", "#Contacts"],
+      "cvText": "Resume",
       "cvLink": "#cvLink"
     },
     "banner": {

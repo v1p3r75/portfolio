@@ -34,7 +34,7 @@
                 <ul class="d-flex list-unstyled fw-light">
                     <li class="me-3" v-for='nav in post.headers?.navs'><a :href="nav.tag"><span
                                 class="color-link me-1">+</span>{{ nav.name }}</a></li>
-                    <li><a :href="post.headers?.cvLink" class="link-styled" style="padding: 10px 15px;">Resume</a></li>
+                    <li><a :href="post.headers?.cvLink" class="link-styled" style="padding: 10px 15px;">{{post.headers?.cvText}}</a></li>
                 </ul>
             </nav>
             <div class="options-bars d-sm-block d-md-block d-lg-none mt-2">
