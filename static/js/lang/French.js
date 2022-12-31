@@ -130,7 +130,7 @@ const fr = {
     'github' : 'https://www.github.com/v1p3r75',
     'twitter': 'https://www.twitter.com/Fried75',
     'instagram': 'https://www.instagram.com/Fried75',
-    'linkedin': 'https://www.linkedin.com/',
+    'linkedin': 'https://www.linkedin.com/in/fortunatus-ek/',
     'whatsapp': 'https://wa.me/+22996457545'
   },
 }
