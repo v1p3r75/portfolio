@@ -33,7 +33,7 @@
             <nav class="d-none d-sm-none d-md-none d-lg-block">
                 <ul class="d-flex list-unstyled fw-light">
                     <li class="me-3" v-for='nav in post.headers?.navs'><a :href="nav.tag"><span
-                                class="color-link me-1">01.</span>{{ nav.name }}</a></li>
+                                class="color-link me-1">+</span>{{ nav.name }}</a></li>
                     <li><a :href="post.headers?.cvLink" class="link-styled" style="padding: 10px 15px;">Resume</a></li>
                 </ul>
             </nav>
@@ -81,7 +81,7 @@
                     </div>
                 </div>
             </article>
-            <article style="padding-left: 13%;" :id="post.headers?.navs[1].name">
+            <article style="padding-left: 13%;" :id="post.headers?.navs[2].tag">
                 <h3 class="w-75" data-aos="fade-down-right" data-aos-duration="600"><span class="me-2"><span
                             class="color-link me-2 fw-light">02.</span>{{post.headers?.navs[1].name}}</span><span
                         class="bar opacity-25 w-50"></span></h3>
@@ -174,11 +174,7 @@
                             <textarea name="message" id="" cols="30" rows="10" class="form-control mt-2"
                                 placeholder="Message"></textarea>
                             <div class="mt-2 text-center">
-<<<<<<< HEAD
                                 <button href="#" style="background-color: inherit;" class="link-styled d-inline-block" type="submit">{{post.contacts?.textButton}}</button>
-=======
-                                <button href="#" style="background-color:inherit" class="link-styled d-inline-block bg-inherit" type="submit">Send message!</button>
->>>>>>> 7c2da8cb8b29486ff5ab3df28c8bcbb35f85f559
                             </div>
                         </form>
                     </div>
