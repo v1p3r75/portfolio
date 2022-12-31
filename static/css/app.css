@@ -1,0 +1,73 @@
+:root{
+    --bg-color : #0A192F;
+    --color-first : #CCD6F6;
+    --color-second : #8690AE;
+    --color-link : #64FFDA;
+    --color-bg : #112240;
+    --color-surface-fill: rgba(29,71,83,0.5);
+
+}
+
+html, body {width: 100%; overflow: auto!important;} a {text-decoration: none; color: inherit}
+#pageContent {background-color: var(--bg-color)!important; padding: 3%; color : var(--color-first)}
+.logo {width: 50px; height: 50px; padding: 8px; border: 2px solid var(--color-link); border-radius: 30px;}
+.color-link {color: var(--color-link);} .bg-color {background-color: var(--bg-color)} .bg-color-1 {background-color: var(--color-link);}
+.link-styled {padding : 15px 25px; color: var(--color-link); border: 1px solid var(--color-link); border-radius: 5px;}
+section {margin-top: 100px; padding: 0 10%;} section article {margin-top: 150px;}
+p {color: var(--color-second); font-weight: 600!important;}
+.photo-container {width: 300px; height: 300px; border: 2px solid var(--color-link)}
+.surface-fill-1 {background-color: rgba(5, 77, 57, 0.7); z-index: 2;}
+.surface-fill-2 {background-color: rgb(100,255,218, 0.6);}
+.surface-fill-3 {background-color: var(--color-surface-fill);}
+article .desc a, .entreprise a {color: var(--color-second);}
+.w-65 {width: 65%;} .h-35 {height: 35%;} .bar {display: inline-block; width: 70%;height: 1px; background-color: var(--color-first); vertical-align: middle;}
+.entreprise a {display: block; padding: 10px 15px;}
+.project-desc{background-color: var(--color-bg); min-width: 120%; max-width: 160%; min-height: 100px; max-height: auto; z-index: 3;}
+/* .works .project-desc:nth-child(2n+1){right: 20%} */
+.techs span {margin-right: 8px;} .works > div {margin-top: 100px;}
+.articles {display: flex; gap: 30px; flex-wrap: wrap;}
+.article {width: 30%; min-height: 300px; padding: 14px; background-color: var(--color-bg); border-radius: 5px;}
+.line {background-color: var(--color-first); width: 1px;}
+.myAddress {transform: rotate(90deg);}
+.form input, .form textarea {border-radius: 0px!important; background-color: var(--color-bg); border: none;}
+.nav-mobile {background-color: var(--bg-color)}
+@media (max-width: 576px){
+    .banner-desc, .about-desc {width: 100%!important;}
+    .myPhoto {float: right; margin-bottom: 100px;}
+    .banner h1{font-size: 1.4rem;}
+    #Entreprise {padding-left: 0!important;}
+    .entreprise {overflow: auto; width: 100%; margin-bottom: 30px;}
+    .entreprise a { border-left: 0!important; border-bottom: 1px solid var(--color-second)!important}
+    .entreprise-active {color: var(--color-link)!important;}
+    .about-desc {text-align: justify;}
+    .project-img {width: 100%!important}
+    .project-description {width: 100%!important; position: absolute!important; top: 0; text-align: left!important; padding: 10px}
+    .project-desc {background-color: inherit!important; right: 0!important; padding: 0!important; margin: 0!important; min-width: 100%!important;}
+    .project-desc p, .source-links {margin: 10px 0!important}
+    .article, .form, .line-1 > div , .localisation{width: 100%!important}
+    
+
+}
+
+@media (min-width: 768px){
+    .banner-desc {width: 100%!important;}
+    #Entreprise {padding-left: 0!important;}
+    .entreprise {overflow: auto; width: 100%; margin-bottom: 30px;}
+    .entreprise a { border-left: 0!important; border-bottom: 1px solid var(--color-second)} .article {width: 45%}
+    .form, .line-1 > div, .localisation {width: 100%!important}
+}
+
+@media (min-width: 992px){
+    .banner-desc {width: 50%!important;}
+    #Entreprise {padding-left: 13%!important;}
+    .entreprise {width: 20%!important; margin-bottom: 30px;}
+    .entreprise a {display: block; padding: 10px 15px; border-bottom:0!important; border-left: 2px solid var(--color-second)!important;}
+    .entreprise-active {border-left: 2px solid var(--color-link)!important;}
+    .article {width: 30%!important}
+    .form, .line-1 > div, .localisation {width: 50%!important}
+    .socials-mobile, .socials-mobile-m {display: none!important;}
+
+}
+
+
+

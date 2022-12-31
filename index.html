@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fortunatus EK - Web Developper</title>
+    <link rel="shortcut icon" href="./static/img/favicon.png" type="image/x-icon">
+    <meta name="description" content="Fortunatus EK's portfolio">
+    <link rel="stylesheet" href="./static/vendors/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./static/vendors/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="./static/vendors/aos/aos.css">
+    <link rel="stylesheet" href="./static/vendors/animate/animate.css">
+    <link rel="stylesheet" href="./static/css/app.css">
+    <script src="./static/vendors/axios/axios.js"></script>
+    <script src="./static/vendors/aos/aos.js"></script>
+</head>
+
+<body>
+
+    <div id="pageContent" class="container-fluid position-relative w-100 h-100">
+
+        <div id="preload-img" class="position-absolute top-0 start-0 w-100 h-100 bg-color" style="z-index: 1000;">
+
+        </div>
+
+        <header class="d-flex justify-content-between" data-aos="zoom-in" data-aos-duration="1500">
+            <div class="brand">
+                <h4 class="color-link logo text-center text-uppercase">{{ post.headers?.logo }}</h4>
+
+            </div>
+            <nav class="d-none d-sm-none d-md-none d-lg-block">
+                <ul class="d-flex list-unstyled fw-light">
+                    <li class="me-3" v-for='nav in post.headers?.navs'><a href="#"><span
+                                class="color-link me-1">01.</span>{{ nav }}</a></li>
+                    <li><a :href="post.headers?.cvLink" class="link-styled" style="padding: 10px 15px;">Resume</a></li>
+                </ul>
+            </nav>
+            <div class="options-bars d-sm-block d-md-block d-lg-none mt-2">
+                <a href="javascript:void(0)"><i class="fa fa-bars fa-2x color-link"></i></a>
+            </div>
+        </header>
+        <!-- Home Page  -->
+        <section style="margin-top: 100px; padding: 0 10%;">
+            <div class="banner w-100">
+                <h5 class="color-link" data-aos="zoom-in" data-aos-duration="500">{{post.banner?.hello}}</h5>
+                <h1 class="fa-5x fw-bold" data-aos="zoom-in" data-aos-duration="600"><abbr
+                        title="Forutnatus Elfried KIDJE" class="text-decoration-none">{{ post.banner?.myName }}</abbr>
+                </h1>
+                <h1 class="fa-4x fw-bold opacity-50" data-aos="fade-down-left" data-aos-duration="700">{{
+                    post.banner?.subtitle }}</h1>
+                <p class="banner-desc w-50 my-4" data-aos="fade-down-right" data-aos-duration="800"
+                    v-html='post.banner?.desc'></p>
+                <a href="#" class="link-styled d-inline-block" data-aos="fade-down-right" data-aos-duration="900">Check
+                    out my course !</a>
+            </div>
+            <article style="padding-left: 5%;" id="AboutMe">
+                <h3 class="w-65" data-aos="fade-up-right" data-aos-duration="1000"><span class="me-2"><span
+                            class="color-link me-2 fw-light">01.</span>{{post.headers?.navs[0]}}</span><span
+                        class="bar opacity-25"></span></h3>
+                <div class="d-lg-flex flex-lg-row flex-md-column flex-sm-column mt-5">
+                    <div class="about-desc w-65" data-aos="fade-up-left" data-aos-duration="700">
+                        <div v-html="post.about?.desc"></div>
+                        <div class="d-grid ms-3 fw-light" style="grid-template-columns: 3fr 3fr 3fr">
+                            <span v-for="tech in post.about?.techs" class='d-block mb-2'>
+                                <i class="fa fa-arrow-right me-3 color-link"></i><a href="javascript:void(0)"> {{ tech
+                                    }} </a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="myPhoto ms-5 pt-5" data-aos="fade-down-right" data-aos-duration="700">
+                        <div class="photo-container position-relative rounded-3">
+                            <div class="photo position-absolute w-100 h-100" style="bottom: 5%; right: 5%">
+                                <img :src="post.about?.myImage?.src" :alt="post.about?.myImage?.alt"
+                                    class="w-100 h-100 rounded-3">
+                            </div>
+                            <div class="surface-fill-3 photo position-absolute w-100 h-100"
+                                style="bottom: 5%; right: 5%"></div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article style="padding-left: 13%;" id="Entreprise">
+                <h3 class="w-75" data-aos="fade-down-right" data-aos-duration="600"><span class="me-2"><span
+                            class="color-link me-2 fw-light">02.</span>{{post.headers?.navs[1]}}</span><span
+                        class="bar opacity-25 w-50"></span></h3>
+                <div class="d-flex d-lg-flex mt-5 w-100">
+                    <div class="d-lg-flex flex-lg-row flex-md-column flex-sm-column w-100">
+                        <div class="entreprise d-flex flex-lg-column flex-md-row flex-sm-row fw-light" data-aos="fade-down-right" data-aos-duration="700">
+                            <a href="#" v-for="enterpriseName of post.enterprises?.names" @click.prevent="changeEnterprise">{{enterpriseName}}</a>
+                        </div>
+                        <div class="description ms-4 pt-2 w-75 w-100" data-aos="fade-down-right" data-aos-duration="800">
+                            <h5><span class="poste">{{post.enterprises?.desc?.[currentEnterprise]?.post}}</span> <span
+                                    class="entreprise-name color-link">@{{post.enterprises?.desc?.[currentEnterprise]?.name}}</span></h5>
+                            <div class="date-bail fw-light my-3"><span class="start">{{post.enterprises?.desc?.[currentEnterprise]?.startDate}}</span> -
+                                <span>{{post.enterprises?.desc?.[currentEnterprise]?.endDate}}</span></div>
+                            <div>
+                                <p class="fw-normal"><i class="fa fa-arrow-right me-3 color-link"></i>Lorem ipsum dolor
+                                    sit amet consectetur adipisicing elit. Sint labore, nihil beatae nobis mollitia
+                                    voluptatem unde perferendis dol</p>
+                                <p class="fw-normal"><i class="fa fa-arrow-right me-3 color-link"></i>Lorem ipsum dolor
+                                    sit amet consectetur adipisicing elit. Sint labore, nihil beatae nobis mollitia
+                                    voluptatem unde perferendis dol Sint labore, nihil beatae nobis mollitia voluptatem
+                                    unde perferendis dol</p>
+                                <p class="fw-normal"><i class="fa fa-arrow-right me-3 color-link"></i>Lorem ipsum dolor
+                                    sit amet consectetur adipisicing elit. Sint labore, nihil beatae nobis mollitia
+                                    voluptatem unde perferendis dol</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <article id="Works">
+                <h3 class="w-75"><span class="me-2"><span
+                            class="color-link me-2 fw-light">02.</span>{{post.headers?.navs[2]}}</span><span
+                        class="bar opacity-25 w-50"></span></h3>
+                <div class="works">
+                    <div class="project d-lg-flex position-relative">
+                        <div class="project-img w-75 bg-dark position-relative" style="height: 400px">
+                            <img src="./static/img/halcyon.png" alt="VS Project" class="w-100 h-100">
+                            <div class="surface-fill-3 photo position-absolute w-100 h-100 top-0 bottom-0"></div>
+
+                        </div>
+                        <div class="project-description position-relative w-50 text-end pt-4">
+                            <h6 class="color-link fw-light">Featured Project</h6>
+                            <h4 class="mt-2 mb-4">Halcyon Theme</h4>
+                            <div class="position-relative project-desc rounded-3 p-3 my-4" style="right: 20%;">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam non rerum qui neque
+                                    modi blanditiis, sed reprehenderit velit officiis recusandae dolores alias
+                                    accusamus, eius unde rem necessitatibus commodi autem a!</p>
+                            </div>
+                            <div class="techs fw-light">
+                                <span>VS Code</span><span>Sublime
+                                    Text</span><span>Atom</span><span>iTerm2</span><span>Hyper</span>
+                            </div>
+                            <div class="source-links mt-5">
+                                <a href="#"><i class="fab fa-github me-3 fa-2x"></i></a> <a href="#"><i
+                                        class="fa fa-external-link fa-2x"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project d-lg-flex position-relative flex-lg-row-reverse">
+                        <div class="project-img w-75 bg-dark position-relative" style="height: 400px">
+                            <img src="./static/img/demo.png" alt="VS Project" class="w-100 h-100">
+                            <div class="surface-fill-3 photo position-absolute w-100 h-100 top-0 bottom-0"></div>
+                        </div>
+                        <div class="project-description position-relative w-50 text-start pt-4">
+                            <h6 class="color-link fw-light">Featured Project</h6>
+                            <h4 class="mt-2 mb-4">Halcyon Theme</h4>
+                            <div class="position-relative project-desc rounded-3 p-3 my-4">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam non rerum qui neque
+                                    modi blanditiis, sed reprehenderit velit officiis recusandae dolores alias
+                                    accusamus, eius unde rem necessitatibus commodi autem a!</p>
+                            </div>
+                            <div class="techs fw-light">
+                                <span>VS Code</span><span>Sublime
+                                    Text</span><span>Atom</span><span>iTerm2</span><span>Hyper</span>
+                            </div>
+                            <div class="source-links mt-5">
+                                <a href="#"><i class="fab fa-github me-3 fa-2x"></i></a> <a href="#"><i
+                                        class="fa fa-external-link fa-2x"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project d-lg-flex position-relative">
+                        <div class="project-img w-75 bg-dark position-relative" style="height: 400px">
+                            <img src="./static/img/course-card.png" alt="VS Project" class="w-100 h-100">
+                            <div class="surface-fill-3 photo position-absolute w-100 h-100 top-0 bottom-0"></div>
+
+                        </div>
+                        <div class="project-description position-relative w-50 text-end pt-4">
+                            <h6 class="color-link fw-light">Featured Project</h6>
+                            <h4 class="mt-2 mb-4">Halcyon Theme</h4>
+                            <div class="position-relative project-desc rounded-3 p-3 my-4" style="right: 20%;">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam non rerum qui neque
+                                    modi blanditiis, sed reprehenderit velit officiis recusandae dolores alias
+                                    accusamus, eius unde rem necessitatibus commodi autem a!</p>
+                            </div>
+                            <div class="techs fw-light">
+                                <span>VS Code</span><span>Sublime
+                                    Text</span><span>Atom</span><span>iTerm2</span><span>Hyper</span>
+                            </div>
+                            <div class="source-links mt-5">
+                                <a href="#"><i class="fab fa-github me-3 fa-2x"></i></a> <a href="#"><i
+                                        class="fa fa-external-link fa-2x"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <a href="/projects.html" class="link-styled d-inline-block">View More</a>
+                    </div>
+                </div>
+            </article>
+            <!-- <article id="blog">
+                <h4 class="text-center">The Latest Articles</h4>
+                <div class="articles pt-5">
+                    <div class="article" v-for="i in 6">
+                        <div class="d-flex justify-content-between mb-4">
+                            <div class="icon-folder"><i class="fa fa-folder-blank fa-2x"></i></div>
+                            <div class="level color-link">
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star"></i>
+                                <i class="fa fa-star-half-alt"></i>
+                                <i class="fa fa-star-half-alt"></i>
+                            </div>
+                        </div>
+                        <h6><a href="/articles">How to build a dropdown menu with HTML, CSS & JavaScript</a></h6>
+                        <p class="fw-light">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam ex blanditiis expedita. Doloremque, deserunt! Ex velit possimus vitae impedit tempore, quaerat reprehenderi ...</p>
+                        <p class="text-end fw-light"><span><i class="fa fa-calendar me-2"></i>&nbsp;</span>:&nbsp;<i>02-12-2022</i></p>
+                    </div>
+                </div>
+                <div class="mt-2 text-center m-auto">
+                    <a href="#" class="link-styled d-inline-block">More Articles</a>
+                </div>
+            </article> -->
+            <article>
+                <h5 class="text-capitalize text-center mb-5"><span class="fw-light color-link">04.</span>What's the next
+                </h5>
+                <div class="d-lg-flex mt-5">
+                    <div class="form w-50 me-3 mb-3">
+                        <h2 class="color-link">Contact Me</h2>
+                        <p class="my-5 fw-light">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum iste
+                            aut, esse ipsum corrupti ut architecto, placeat recusandae mollitia voluptatem enim.
+                            Architecto veniam maxime, officia blanditiis voluptas quasi quia libero!</p>
+                        <form action="">
+                            <div class="line-1 d-lg-flex w-100">
+                                <div class="name w-50 me-2 mt-2"><input type="text" name="name" placeholder="Name"
+                                        class="form-control w-100 p-2"></div>
+                                <div class="email w-50 mt-2"><input type="text" name="email" placeholder="Email"
+                                        class="form-control w-100 p-2"></div>
+                            </div>
+                            <div class="subject w-100 me-2 mt-2"><input type="text" name="subject" placeholder="Subject"
+                                    class="form-control w-100 p-2"></div>
+                            <textarea name="message" id="" cols="30" rows="10" class="form-control mt-2"
+                                placeholder="Message"></textarea>
+                            <div class="mt-2 text-center">
+                                <a href="#" class="link-styled d-inline-block">Send message!</a>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="localisation w-50 h-100">
+                        <img src="./static/img/localisation.png" alt="Fortunatus EK localisation" class="w-100 h-100">
+                    </div>
+                </div>
+
+            </article>
+        </section>
+        <footer class="" style="margin-top: 150px;">
+            <div class="text-center">
+                <div class="socials-mobile d-flex mb-3 w-75 mx-auto justify-content-between">
+                    <a target="_blank" :href="post.socialsLinks?.github"><i class="fab fa-github"></i></a>
+                    <a target="_blank" :href="post.socialsLinks?.instagram"><i class="fab fa-instagram"></i></a>
+                    <a target="_blank" :href="post.socialsLinks?.twitter"><i class="fab fa-twitter"></i></a>
+                    <a target="_blank" :href="post.socialsLinks?.linkedin"><i class="fab fa-linkedin-in"></i></a>
+                    <a target="_blank" :href="post.socialsLinks?.whatsapp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+                <p class="socials-mobile-m"><a href="mailto:elfriedv16@gmail.com"
+                        class="fw-light">elfriedv16@gmail.com</a></p>
+                <p class="fw-light">Designed & Built By Fortunatus EK <br> Fortunatus EK - &copy; 2022</p>
+            </div>
+        </footer>
+        <div class="socials d-none d-lg-block d-md-none d-sm-none-i position-fixed bottom-0 d-flex flex-column opacity-75 h-50"
+            style="left: 4%;">
+            <div class="d-flex flex-column h-75 justify-content-between">
+                <a target="_blank" :href="post.socialsLinks?.github"><i class="fab fa-github"></i></a>
+                <a target="_blank" :href="post.socialsLinks?.instagram"><i class="fab fa-instagram"></i></a>
+                <a target="_blank" :href="post.socialsLinks?.twitter"><i class="fab fa-twitter"></i></a>
+                <a target="_blank" :href="post.socialsLinks?.linkedin"><i class="fab fa-linkedin-in"></i></a>
+                <a target="_blank" :href="post.socialsLinks?.whatsapp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <div class="h-25 mt-4">
+                <div class="line h-100 mx-auto"></div>
+            </div>
+        </div>
+        <div
+            class="contacts d-none d-lg-block d-md-none d-sm-none position-fixed bottom-0 d-flex flex-column opacity-75 h-35 end-0">
+            <div class="h-75"><a href="mailto:elfriedv16@gmail.com"
+                    class="fw-light myAddress d-block">elfried.fortunatus@gmail.com</a></div>
+            <div class="h-50 mt-4">
+                <div class="line h-100 mx-auto"></div>
+            </div>
+        </div>
+        <div class="nav-mobile position-absolute d-none d-flex flex-column top-0 start-0 w-100 h-100 animate__animated animate__bounceInLeft"
+            style="z-index: 50">
+            <div class="w-100 text-end pe-2 mt-2">
+                <a href="javascript:void(0)"><i class="nav-close fa fa-close color-link fa-2x"></i></a>
+            </div>
+            <div class="w-50 fw-bold mx-auto">
+                <div class="my-5" v-for='nav in post.headers?.navs'><a href="#"><span
+                            class="color-link me-1">01.</span>{{ nav }}</a></div>
+                <div><a :href="post.headers?.cvLink" class="link-styled" style="padding: 10px 15px;">Resume</a></div>
+            </div>
+        </div>
+
+    </div>
+    <script>
+        //let img_deg = 0;
+        //let TimerId = setInterval(() => {
+        //    img_deg += 10;
+        //    document.querySelector('#preload-img i').style.transform = 'rotate(' + img_deg +'deg)';
+        //}, 100)
+    </script>
+    <script src="./static/vendors/vue/vue.global.js"></script>
+    <script src="./static/js/app.js" type="module"></script>
+</body>
+
+</html>
