@@ -3,6 +3,6 @@ On this portofolio site I try to talk about myself in general: My background, my
 
 ## Screenshots
 
-![App Screenshot](screenshot.png)
+![App Screenshot](screenshots.png)
 
 You can visit the site here:
