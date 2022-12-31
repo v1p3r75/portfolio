@@ -13,7 +13,7 @@ const app = Vue.createApp({
 
         return {
             currentEnterprise : '',
-            lang : 'fr',
+            lang : 'en',
             post: [],
         }
     },
@@ -21,18 +21,24 @@ const app = Vue.createApp({
     methods: {
         changeEnterprise: function(e) {
             this.currentEnterprise = e.target.innerText;
+        },
+        setLang: function(){
+            switch (this.lang) {
+                case 'fr': this.post = fr ; break;
+                case 'en': this.post = en; break;
+                default: this.post = en; break;
+            }
         }
     },
-
+    watch: {
+        lang: function() {
+            return this.setLang();
+        }
+    },
     mounted() {
     	AOS.init()
-        console.log(fr.enterprises)
         document.querySelector('#preload-img').classList.add('d-none')
-        switch (this.lang) {
-            case 'fr': this.post = fr ; break;
-            case 'en': this.post = en; break;
-            default: this.post = fr; break;
-        }
+        this.setLang()
         this.currentEnterprise = this.post.enterprises?.names[0]
         document.querySelector('.nav-close').addEventListener('click', (e) => document.querySelector('.nav-mobile').classList.add('d-none'))
         document.querySelector('.options-bars').addEventListener('click', (e) => document.querySelector('.nav-mobile').classList.remove('d-none'))
