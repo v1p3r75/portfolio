@@ -1,4 +1,4 @@
-# portfolio
+# Portfolio
 On this portofolio site I try to talk about myself in general: My background, my experiences and my projects, ...
 
 ## Screenshots
