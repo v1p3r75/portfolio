@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Fortunatus EK - Web Developper</title>
-    <link rel="shortcut icon" href="./static/img/favicon.png" type="image/x-icon">
+    <link rel="icon" href="./static/img/favicon.png" type="image/x-icon">
     <meta name="description" content="Fortunatus EK's portfolio">
     <link rel="stylesheet" href="./static/vendors/bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="./static/vendors/fontawesome/css/all.min.css">
@@ -32,8 +32,8 @@
             </div>
             <nav class="d-none d-sm-none d-md-none d-lg-block">
                 <ul class="d-flex list-unstyled fw-light">
-                    <li class="me-3" v-for='nav in post.headers?.navs'><a href="#"><span
-                                class="color-link me-1">01.</span>{{ nav }}</a></li>
+                    <li class="me-3" v-for='nav in post.headers?.navs'><a :href="nav.tag"><span
+                                class="color-link me-1">01.</span>{{ nav.name }}</a></li>
                     <li><a :href="post.headers?.cvLink" class="link-styled" style="padding: 10px 15px;">Resume</a></li>
                 </ul>
             </nav>
@@ -57,15 +57,15 @@
             </div>
             <article style="padding-left: 5%;" id="AboutMe">
                 <h3 class="w-65" data-aos="fade-up-right" data-aos-duration="1000"><span class="me-2"><span
-                            class="color-link me-2 fw-light">01.</span>{{post.headers?.navs[0]}}</span><span
+                            class="color-link me-2 fw-light">01.</span>{{post.headers?.navs[0].name}}</span><span
                         class="bar opacity-25"></span></h3>
                 <div class="d-lg-flex flex-lg-row flex-md-column flex-sm-column mt-5">
                     <div class="about-desc w-65" data-aos="fade-up-left" data-aos-duration="700">
                         <div v-html="post.about?.desc"></div>
                         <div class="d-grid ms-3 fw-light" style="grid-template-columns: 3fr 3fr 3fr">
                             <span v-for="tech in post.about?.techs" class='d-block mb-2'>
-                                <i class="fa fa-arrow-right me-3 color-link"></i><a href="javascript:void(0)"> {{ tech
-                                    }} </a>
+                                <!-- <i class="fa fa-arrow-right me-3 color-link"></i> -->
+                                <a href="javascript:void(0)" v-html="tech"></a>
                             </span>
                         </div>
                     </div>
@@ -81,9 +81,9 @@
                     </div>
                 </div>
             </article>
-            <article style="padding-left: 13%;" id="Entreprise">
+            <article style="padding-left: 13%;" :id="post.headers?.navs[1].name">
                 <h3 class="w-75" data-aos="fade-down-right" data-aos-duration="600"><span class="me-2"><span
-                            class="color-link me-2 fw-light">02.</span>{{post.headers?.navs[1]}}</span><span
+                            class="color-link me-2 fw-light">02.</span>{{post.headers?.navs[1].name}}</span><span
                         class="bar opacity-25 w-50"></span></h3>
                 <div class="d-flex d-lg-flex mt-5 w-100">
                     <div class="d-lg-flex flex-lg-row flex-md-column flex-sm-column w-100">
@@ -95,99 +95,38 @@
                                     class="entreprise-name color-link">@{{post.enterprises?.desc?.[currentEnterprise]?.name}}</span></h5>
                             <div class="date-bail fw-light my-3"><span class="start">{{post.enterprises?.desc?.[currentEnterprise]?.startDate}}</span> -
                                 <span>{{post.enterprises?.desc?.[currentEnterprise]?.endDate}}</span></div>
-                            <div>
-                                <p class="fw-normal"><i class="fa fa-arrow-right me-3 color-link"></i>Lorem ipsum dolor
-                                    sit amet consectetur adipisicing elit. Sint labore, nihil beatae nobis mollitia
-                                    voluptatem unde perferendis dol</p>
-                                <p class="fw-normal"><i class="fa fa-arrow-right me-3 color-link"></i>Lorem ipsum dolor
-                                    sit amet consectetur adipisicing elit. Sint labore, nihil beatae nobis mollitia
-                                    voluptatem unde perferendis dol Sint labore, nihil beatae nobis mollitia voluptatem
-                                    unde perferendis dol</p>
-                                <p class="fw-normal"><i class="fa fa-arrow-right me-3 color-link"></i>Lorem ipsum dolor
-                                    sit amet consectetur adipisicing elit. Sint labore, nihil beatae nobis mollitia
-                                    voluptatem unde perferendis dol</p>
-                            </div>
+                            <div v-html="post.enterprises?.desc?.[currentEnterprise]?.roles"></div>
                         </div>
                     </div>
                 </div>
             </article>
             <article id="Works">
-                <h3 class="w-75"><span class="me-2"><span
-                            class="color-link me-2 fw-light">02.</span>{{post.headers?.navs[2]}}</span><span
+                <h3 class="w-75" data-aos="fade-down-right" data-aos-duration="600"><span class="me-2"><span
+                            class="color-link me-2 fw-light">02.</span>{{post.headers?.navs[2].name}}</span><span
                         class="bar opacity-25 w-50"></span></h3>
                 <div class="works">
-                    <div class="project d-lg-flex position-relative">
-                        <div class="project-img w-75 bg-dark position-relative" style="height: 400px">
-                            <img src="./static/img/halcyon.png" alt="VS Project" class="w-100 h-100">
-                            <div class="surface-fill-3 photo position-absolute w-100 h-100 top-0 bottom-0"></div>
-
-                        </div>
-                        <div class="project-description position-relative w-50 text-end pt-4">
-                            <h6 class="color-link fw-light">Featured Project</h6>
-                            <h4 class="mt-2 mb-4">Halcyon Theme</h4>
-                            <div class="position-relative project-desc rounded-3 p-3 my-4" style="right: 20%;">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam non rerum qui neque
-                                    modi blanditiis, sed reprehenderit velit officiis recusandae dolores alias
-                                    accusamus, eius unde rem necessitatibus commodi autem a!</p>
+                    <template v-for="project in post.projects">
+                        <div class="project d-lg-flex position-relative" :class="project.classRow"  data-aos="fade-down-left" data-aos-duration="700">
+                            <div class="project-img w-75 bg-dark position-relative" :class="project.class" style="height: 400px">
+                                <img :src="project.img" :alt="project.name + ' Image'" class="w-100 h-100">
+                                <div class="surface-fill-3 photo position-absolute w-100 h-100 top-0 bottom-0"></div>
                             </div>
-                            <div class="techs fw-light">
-                                <span>VS Code</span><span>Sublime
-                                    Text</span><span>Atom</span><span>iTerm2</span><span>Hyper</span>
-                            </div>
-                            <div class="source-links mt-5">
-                                <a href="#"><i class="fab fa-github me-3 fa-2x"></i></a> <a href="#"><i
-                                        class="fa fa-external-link fa-2x"></i></a>
+                            <div class="project-description position-relative w-50 pt-4" :class="project.classDescText">
+                                <h6 class="color-link fw-light">{{project.type}}</h6>
+                                <h4 class="mt-2 mb-4">{{project.name}}</h4>
+                                <div class="position-relative project-desc rounded-3 p-3 my-4" :style="project.style">
+                                    <p>{{project.description}}</p>
+                                </div>
+                                <div class="techs fw-light">
+                                    <span v-for="techs in project.techs">{{techs}}</span>
+                                </div>
+                                <div class="source-links mt-5">
+                                    <a :href="project.links?.github"><i class="fab fa-github me-3 fa-2x"></i></a>
+                                    <a :href="project.links?.external"><i class="fa fa-external-link fa-2x"></i></a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="project d-lg-flex position-relative flex-lg-row-reverse">
-                        <div class="project-img w-75 bg-dark position-relative" style="height: 400px">
-                            <img src="./static/img/demo.png" alt="VS Project" class="w-100 h-100">
-                            <div class="surface-fill-3 photo position-absolute w-100 h-100 top-0 bottom-0"></div>
-                        </div>
-                        <div class="project-description position-relative w-50 text-start pt-4">
-                            <h6 class="color-link fw-light">Featured Project</h6>
-                            <h4 class="mt-2 mb-4">Halcyon Theme</h4>
-                            <div class="position-relative project-desc rounded-3 p-3 my-4">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam non rerum qui neque
-                                    modi blanditiis, sed reprehenderit velit officiis recusandae dolores alias
-                                    accusamus, eius unde rem necessitatibus commodi autem a!</p>
-                            </div>
-                            <div class="techs fw-light">
-                                <span>VS Code</span><span>Sublime
-                                    Text</span><span>Atom</span><span>iTerm2</span><span>Hyper</span>
-                            </div>
-                            <div class="source-links mt-5">
-                                <a href="#"><i class="fab fa-github me-3 fa-2x"></i></a> <a href="#"><i
-                                        class="fa fa-external-link fa-2x"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project d-lg-flex position-relative">
-                        <div class="project-img w-75 bg-dark position-relative" style="height: 400px">
-                            <img src="./static/img/course-card.png" alt="VS Project" class="w-100 h-100">
-                            <div class="surface-fill-3 photo position-absolute w-100 h-100 top-0 bottom-0"></div>
-
-                        </div>
-                        <div class="project-description position-relative w-50 text-end pt-4">
-                            <h6 class="color-link fw-light">Featured Project</h6>
-                            <h4 class="mt-2 mb-4">Halcyon Theme</h4>
-                            <div class="position-relative project-desc rounded-3 p-3 my-4" style="right: 20%;">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam non rerum qui neque
-                                    modi blanditiis, sed reprehenderit velit officiis recusandae dolores alias
-                                    accusamus, eius unde rem necessitatibus commodi autem a!</p>
-                            </div>
-                            <div class="techs fw-light">
-                                <span>VS Code</span><span>Sublime
-                                    Text</span><span>Atom</span><span>iTerm2</span><span>Hyper</span>
-                            </div>
-                            <div class="source-links mt-5">
-                                <a href="#"><i class="fab fa-github me-3 fa-2x"></i></a> <a href="#"><i
-                                        class="fa fa-external-link fa-2x"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                    </template>
                     <div class="text-center">
                         <a href="/projects.html" class="link-styled d-inline-block">View More</a>
                     </div>
@@ -217,14 +156,12 @@
                 </div>
             </article> -->
             <article>
-                <h5 class="text-capitalize text-center mb-5"><span class="fw-light color-link">04.</span>What's the next
+                <h5 class="text-capitalize text-center mb-5"><span class="fw-light color-link">04.</span>{{post.headers?.navs[3].name}}
                 </h5>
                 <div class="d-lg-flex mt-5">
                     <div class="form w-50 me-3 mb-3">
-                        <h2 class="color-link">Contact Me</h2>
-                        <p class="my-5 fw-light">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolorum iste
-                            aut, esse ipsum corrupti ut architecto, placeat recusandae mollitia voluptatem enim.
-                            Architecto veniam maxime, officia blanditiis voluptas quasi quia libero!</p>
+                        <h2 class="color-link">{{post.contacts?.title}}</h2>
+                        <p class="my-5 fw-light">{{post.contacts?.text}}</p>
                         <form action="https://formspree.io/f/xknannoy" method="POST">
                             <div class="line-1 d-lg-flex w-100">
                                 <div class="name w-50 me-2 mt-2"><input type="text" name="name" placeholder="Name"
@@ -237,7 +174,7 @@
                             <textarea name="message" id="" cols="30" rows="10" class="form-control mt-2"
                                 placeholder="Message"></textarea>
                             <div class="mt-2 text-center">
-                                <button href="#" style="background-color: inherit;" class="link-styled d-inline-block" type="submit">Send message!</button>
+                                <button href="#" style="background-color: inherit;" class="link-styled d-inline-block" type="submit">{{post.contacts?.textButton}}</button>
                             </div>
                         </form>
                     </div>
