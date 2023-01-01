@@ -48,76 +48,79 @@
                 <a href="javascript:void(0)"><i class="fa fa-bars fa-2x color-link"></i></a>
             </div>
         </header>
-        <article :id="post.headers?.navs[2].tag">
-            <h3 class="w-75" data-aos="fade-down-right" data-aos-duration="600"><span class="me-2"><span
-                        class="color-link me-2 fw-light">02.</span>{{post.headers?.navs[2].name}}</span><span
-                    class="bar opacity-25 w-50"></span></h3>
-            <div class="works">
-                <template v-for="project in post.projects">
-                    <div class="project d-lg-flex position-relative" :class="project.classRow" data-aos="fade-down-left"
-                        data-aos-duration="700">
-                        <div class="project-img w-75 bg-dark position-relative" :class="project.class"
-                            style="height: 400px">
-                            <img :src="project.img" :alt="project.name + ' Image'" class="w-100 h-100">
-                            <div class="surface-fill-3 photo position-absolute w-100 h-100 top-0 bottom-0"></div>
+        <section style="margin-top: 100px; padding: 0 10%;">
+    <article :id="post.headers?.navs[2].tag">
+                <h3 class="w-75" data-aos="fade-down-right" data-aos-duration="600"><span class="me-2"><span
+                            class="color-link me-2 fw-light">02.</span>{{post.headers?.navs[2].name}}</span><span
+                        class="bar opacity-25 w-50"></span></h3>
+                <div class="works">
+                    <template v-for="project in post.projects">
+                        <div class="project d-lg-flex position-relative" :class="project.classRow" data-aos="fade-down-left"
+                            data-aos-duration="700">
+                            <div class="project-img w-75 bg-dark position-relative" :class="project.class"
+                                style="height: 400px">
+                                <img :src="project.img" :alt="project.name + ' Image'" class="w-100 h-100">
+                                <div class="surface-fill-3 photo position-absolute w-100 h-100 top-0 bottom-0"></div>
+                            </div>
+                            <div class="project-description position-relative w-50 pt-4" :class="project.classDescText">
+                                <h6 class="color-link fw-light">{{project.type}}</h6>
+                                <h4 class="mt-2 mb-4">{{project.name}}</h4>
+                                <div class="position-relative project-desc rounded-3 p-3 my-4" :style="project.style">
+                                    <p>{{project.description}}</p>
+                                </div>
+                                <div class="techs fw-light">
+                                    <span v-for="techs in project.techs">{{techs}}</span>
+                                </div>
+                                <div class="source-links mt-5">
+                                    <a :href="project.links?.github"><i class="fab fa-github me-3 fa-2x"></i></a>
+                                    <a :href="project.links?.external"><i class="fa fa-external-link fa-2x"></i></a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="project-description position-relative w-50 pt-4" :class="project.classDescText">
-                            <h6 class="color-link fw-light">{{project.type}}</h6>
-                            <h4 class="mt-2 mb-4">{{project.name}}</h4>
-                            <div class="position-relative project-desc rounded-3 p-3 my-4" :style="project.style">
-                                <p>{{project.description}}</p>
-                            </div>
-                            <div class="techs fw-light">
-                                <span v-for="techs in project.techs">{{techs}}</span>
-                            </div>
-                            <div class="source-links mt-5">
-                                <a :href="project.links?.github"><i class="fab fa-github me-3 fa-2x"></i></a>
-                                <a :href="project.links?.external"><i class="fa fa-external-link fa-2x"></i></a>
-                            </div>
-                        </div>
+                    </template>
+                    <div class="text-center">
+                        <a href="/projects.html" class="link-styled d-inline-block">View More</a>
                     </div>
-                </template>
-                <div class="text-center">
-                    <a href="/projects.html" class="link-styled d-inline-block">View More</a>
                 </div>
-            </div>
-        </article>
-        <article :id="post.headers?.navs[3].tag">
-            <h5 class="text-capitalize text-center mb-5" data-aos="fade-down-top" data-aos-duration="600"><span
-                    class="fw-light color-link">04.</span>{{post.headers?.navs[3].name}}
-            </h5>
-            <div class="d-lg-flex mt-5">
-                <div class="form w-50 me-3 mb-3">
-                    <h2 class="color-link" data-aos="fade-down-right" data-aos-duration="700">{{post.contacts?.title}}
-                    </h2>
-                    <p class="my-5 fw-light" data-aos="fade-down-left" data-aos-duration="800">{{post.contacts?.text}}
-                    </p>
-                    <form action="https://formspree.io/f/xknannoy" method="POST" data-aos="fade-down-bottom"
-                        data-aos-duration="850">
-                        <div class="line-1 d-lg-flex w-100">
-                            <div class="name w-50 me-2 mt-2"><input type="text" name="name" placeholder="Name"
+            </article>
+            <article :id="post.headers?.navs[3].tag">
+                <h5 class="text-capitalize text-center mb-5" data-aos="fade-down-top" data-aos-duration="600"><span
+                        class="fw-light color-link">04.</span>{{post.headers?.navs[3].name}}
+                </h5>
+                <div class="d-lg-flex mt-5">
+                    <div class="form w-50 me-3 mb-3">
+                        <h2 class="color-link" data-aos="fade-down-right" data-aos-duration="700">{{post.contacts?.title}}
+                        </h2>
+                        <p class="my-5 fw-light" data-aos="fade-down-left" data-aos-duration="800">{{post.contacts?.text}}
+                        </p>
+                        <form action="https://formspree.io/f/xknannoy" method="POST" data-aos="fade-down-bottom"
+                            data-aos-duration="850">
+                            <div class="line-1 d-lg-flex w-100">
+                                <div class="name w-50 me-2 mt-2"><input type="text" name="name" placeholder="Name"
+                                        class="form-control w-100 p-2" required></div>
+                                <div class="email w-50 mt-2"><input type="text" name="email" placeholder="Email"
+                                        class="form-control w-100 p-2" required></div>
+                            </div>
+                            <div class="subject w-100 me-2 mt-2"><input type="text" name="subject" placeholder="Subject"
                                     class="form-control w-100 p-2" required></div>
-                            <div class="email w-50 mt-2"><input type="text" name="email" placeholder="Email"
-                                    class="form-control w-100 p-2" required></div>
-                        </div>
-                        <div class="subject w-100 me-2 mt-2"><input type="text" name="subject" placeholder="Subject"
-                                class="form-control w-100 p-2" required></div>
-                        <textarea name="message" id="" cols="30" rows="10" class="form-control mt-2"
-                            placeholder="Message" required></textarea>
-                        <div class="mt-2 text-center">
-                            <button href="#" style="background-color: inherit;" class="link-styled d-inline-block"
-                                type="submit">{{post.contacts?.textButton}}</button>
-                        </div>
-                    </form>
+                            <textarea name="message" id="" cols="30" rows="10" class="form-control mt-2"
+                                placeholder="Message" required></textarea>
+                            <div class="mt-2 text-center">
+                                <button href="#" style="background-color: inherit;" class="link-styled d-inline-block"
+                                    type="submit">{{post.contacts?.textButton}}</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="localisation position-relative w-50 h-100" data-aos="fade-down-right"
+                        data-aos-duration="600">
+                        <img :src="post.contacts?.positionImg" alt="Fortunatus EK localisation" class="w-100 h-100">
+                        <div class="surface-fill-3 photo position-absolute w-100 h-100 top-0 bottom-0"></div>
+                    </div>
                 </div>
-                <div class="localisation position-relative w-50 h-100" data-aos="fade-down-right"
-                    data-aos-duration="600">
-                    <img :src="post.contacts?.positionImg" alt="Fortunatus EK localisation" class="w-100 h-100">
-                    <div class="surface-fill-3 photo position-absolute w-100 h-100 top-0 bottom-0"></div>
-                </div>
-            </div>
 
-        </article>
+            </article>
+        </section>
+        
         </section>
         <footer class="" style="margin-top: 150px;">
             <div class="text-center">
