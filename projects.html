@@ -6,104 +6,173 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Fortunatus EK - Web Developper</title>
-    <link rel="shortcut icon" href="/static/img/favicon.png" type="image/x-icon">
-    <meta name="description" content="Fortunatus EK's portfolio">
-    <link rel="stylesheet" href="/static/vendors/bootstrap/css/bootstrap.css">
-    <link rel="stylesheet" href="/static/vendors/fontawesome/css/all.min.css">
-    <link rel="stylesheet" href="/static/vendors/animate/animate.css">
-    <link rel="stylesheet" href="/static/css/app.css">
-    <script src="/static/vendors/axios/axios.js"></script>
+    <link rel="icon" href="./static/img/icon.jpg" type="image/x-icon">
+    <meta name="description"
+        content="I am a passionate software developer. This site is a short summary to describe my journey, my projects and my experiences.">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="./static/css/app.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 </head>
 
 <body>
 
     <div id="pageContent" class="container-fluid position-relative w-100 h-100">
+        <div id="preload-img" class="position-absolute top-0 start-0 w-100 h-100 bg-color" style="z-index: 1000;">
 
-        <header class="d-flex justify-content-between">
+        </div>
+
+        <header class="d-flex justify-content-between" data-aos="zoom-in" data-aos-duration="1500">
             <div class="brand">
-                <h4 class="color-link logo text-center text-uppercase" @click='clicked'>{{ post.headers?.logo }}</h4>
+                <h4 class="color-link logo text-center text-uppercase">{{ post.headers?.logo }}</h4>
 
             </div>
             <nav class="d-none d-sm-none d-md-none d-lg-block">
                 <ul class="d-flex list-unstyled fw-light">
-                    <li class="me-3" v-for='nav in post.headers?.navs'><a href="#"><span class="color-link me-1">01.</span>{{ nav }}</a></li>
-                    <li><a :href="post.headers?.cvLink" class="link-styled" style="padding: 10px 15px;">Resume</a></li>
+                    <li class="me-3" v-for='nav in post.headers?.navs'><a :href="'#' + nav.tag"><span
+                                class="color-link me-1">+</span>{{ nav.name }}</a></li>
+                    <li><a :href="post.headers?.cvLink" class="link-styled"
+                            style="padding: 10px 15px;">{{post.headers?.cvText}}</a></li>
+                    <li class="color-link me-1"><select v-model="lang" name="lang" id="Lang"
+                            class="form-select link-styled border-0 ms-3 px-3 py-1" style="background-color: inherit;"
+                            @onchange>
+                            <option value="fr">French</option>
+                            <option value="en">English</option>
+                        </select></li>
                 </ul>
             </nav>
             <div class="options-bars d-sm-block d-md-block d-lg-none mt-2">
                 <a href="javascript:void(0)"><i class="fa fa-bars fa-2x color-link"></i></a>
             </div>
         </header>
-        <!-- Home Page  -->
-        <section style="margin-top: 100px; padding: 0 10%;">
-            <article id="Works">
-                <h3 class="w-75"><span class="me-2"><span class="color-link me-2 fw-light"></span>Some Things I've Built</span><span class="bar opacity-25 w-50"></span></h3>
-                <p class="mt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora ullam dignissimos fugit omnis, voluptates at. Corporis, incidunt. Incidunt, nihil, doloremque eum fugiat veritatis nesciunt iusto error, delectus impedit consectetur exercitationem :
-
-                </p>
-                <div class="works">
-                    <div class="project d-lg-flex position-relative">
-                        <div class="project-img w-75 bg-dark position-relative" style="height: 400px">
-                            <img src="./static/img/halcyon.png" alt="VS Project" class="w-100 h-100">
+        <article :id="post.headers?.navs[2].tag">
+            <h3 class="w-75" data-aos="fade-down-right" data-aos-duration="600"><span class="me-2"><span
+                        class="color-link me-2 fw-light">02.</span>{{post.headers?.navs[2].name}}</span><span
+                    class="bar opacity-25 w-50"></span></h3>
+            <div class="works">
+                <template v-for="project in post.projects">
+                    <div class="project d-lg-flex position-relative" :class="project.classRow" data-aos="fade-down-left"
+                        data-aos-duration="700">
+                        <div class="project-img w-75 bg-dark position-relative" :class="project.class"
+                            style="height: 400px">
+                            <img :src="project.img" :alt="project.name + ' Image'" class="w-100 h-100">
                             <div class="surface-fill-3 photo position-absolute w-100 h-100 top-0 bottom-0"></div>
-
                         </div>
-                        <div class="project-description position-relative w-50 text-end pt-4">
-                            <h6 class="color-link fw-light">Featured Project</h6>
-                            <h4 class="mt-2 mb-4">Halcyon Theme</h4>
-                            <div class="position-relative project-desc rounded-3 p-3 my-4" style="right: 20%;">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam non rerum qui neque modi blanditiis, sed reprehenderit velit officiis recusandae dolores alias accusamus, eius unde rem necessitatibus commodi autem a!</p>
+                        <div class="project-description position-relative w-50 pt-4" :class="project.classDescText">
+                            <h6 class="color-link fw-light">{{project.type}}</h6>
+                            <h4 class="mt-2 mb-4">{{project.name}}</h4>
+                            <div class="position-relative project-desc rounded-3 p-3 my-4" :style="project.style">
+                                <p>{{project.description}}</p>
                             </div>
                             <div class="techs fw-light">
-                                <span>VS Code</span><span>Sublime Text</span><span>Atom</span><span>iTerm2</span><span>Hyper</span>
+                                <span v-for="techs in project.techs">{{techs}}</span>
                             </div>
                             <div class="source-links mt-5">
-                                <a href="#"><i class="fab fa-github me-3 fa-2x"></i></a> <a href="#"><i class="fa fa-external-link fa-2x"></i></a>
+                                <a :href="project.links?.github"><i class="fab fa-github me-3 fa-2x"></i></a>
+                                <a :href="project.links?.external"><i class="fa fa-external-link fa-2x"></i></a>
                             </div>
                         </div>
                     </div>
-
-                    <div class="project d-lg-flex position-relative flex-lg-row-reverse">
-                        <div class="project-img w-75 bg-dark position-relative" style="height: 400px">
-                            <img src="./static/img/demo.png" alt="VS Project" class="w-100 h-100">
-                            <div class="surface-fill-3 photo position-absolute w-100 h-100 top-0 bottom-0"></div>
-                        </div>
-                        <div class="project-description position-relative w-50 text-start pt-4">
-                            <h6 class="color-link fw-light">Featured Project</h6>
-                            <h4 class="mt-2 mb-4">Halcyon Theme</h4>
-                            <div class="position-relative project-desc rounded-3 p-3 my-4">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam non rerum qui neque modi blanditiis, sed reprehenderit velit officiis recusandae dolores alias accusamus, eius unde rem necessitatibus commodi autem a!</p>
-                            </div>
-                            <div class="techs fw-light">
-                                <span>VS Code</span><span>Sublime Text</span><span>Atom</span><span>iTerm2</span><span>Hyper</span>
-                            </div>
-                            <div class="source-links mt-5">
-                                <a href="#"><i class="fab fa-github me-3 fa-2x"></i></a> <a href="#"><i class="fa fa-external-link fa-2x"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="project d-lg-flex position-relative">
-                        <div class="project-img w-75 bg-dark position-relative" style="height: 400px">
-                            <img src="./static/img/course-card.png" alt="VS Project" class="w-100 h-100">
-                            <div class="surface-fill-3 photo position-absolute w-100 h-100 top-0 bottom-0"></div>
-
-                        </div>
-                        <div class="project-description position-relative w-50 text-end pt-4">
-                            <h6 class="color-link fw-light">Featured Project</h6>
-                            <h4 class="mt-2 mb-4">Halcyon Theme</h4>
-                            <div class="position-relative project-desc rounded-3 p-3 my-4" style="right: 20%;">
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam non rerum qui neque modi blanditiis, sed reprehenderit velit officiis recusandae dolores alias accusamus, eius unde rem necessitatibus commodi autem a!</p>
-                            </div>
-                            <div class="techs fw-light">
-                                <span>VS Code</span><span>Sublime Text</span><span>Atom</span><span>iTerm2</span><span>Hyper</span>
-                            </div>
-                            <div class="source-links mt-5">
-                                <a href="#"><i class="fab fa-github me-3 fa-2x"></i></a> <a href="#"><i class="fa fa-external-link fa-2x"></i></a>
-                            </div>
-                        </div>
-                    </div>
+                </template>
+                <div class="text-center">
+                    <a href="/projects.html" class="link-styled d-inline-block">View More</a>
                 </div>
+            </div>
+        </article>
+        <article :id="post.headers?.navs[3].tag">
+            <h5 class="text-capitalize text-center mb-5" data-aos="fade-down-top" data-aos-duration="600"><span
+                    class="fw-light color-link">04.</span>{{post.headers?.navs[3].name}}
+            </h5>
+            <div class="d-lg-flex mt-5">
+                <div class="form w-50 me-3 mb-3">
+                    <h2 class="color-link" data-aos="fade-down-right" data-aos-duration="700">{{post.contacts?.title}}
+                    </h2>
+                    <p class="my-5 fw-light" data-aos="fade-down-left" data-aos-duration="800">{{post.contacts?.text}}
+                    </p>
+                    <form action="https://formspree.io/f/xknannoy" method="POST" data-aos="fade-down-bottom"
+                        data-aos-duration="850">
+                        <div class="line-1 d-lg-flex w-100">
+                            <div class="name w-50 me-2 mt-2"><input type="text" name="name" placeholder="Name"
+                                    class="form-control w-100 p-2" required></div>
+                            <div class="email w-50 mt-2"><input type="text" name="email" placeholder="Email"
+                                    class="form-control w-100 p-2" required></div>
+                        </div>
+                        <div class="subject w-100 me-2 mt-2"><input type="text" name="subject" placeholder="Subject"
+                                class="form-control w-100 p-2" required></div>
+                        <textarea name="message" id="" cols="30" rows="10" class="form-control mt-2"
+                            placeholder="Message" required></textarea>
+                        <div class="mt-2 text-center">
+                            <button href="#" style="background-color: inherit;" class="link-styled d-inline-block"
+                                type="submit">{{post.contacts?.textButton}}</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="localisation position-relative w-50 h-100" data-aos="fade-down-right"
+                    data-aos-duration="600">
+                    <img :src="post.contacts?.positionImg" alt="Fortunatus EK localisation" class="w-100 h-100">
+                    <div class="surface-fill-3 photo position-absolute w-100 h-100 top-0 bottom-0"></div>
+                </div>
+            </div>
+
+        </article>
         </section>
+        <footer class="" style="margin-top: 150px;">
+            <div class="text-center">
+                <div class="socials-mobile d-flex mb-3 w-75 mx-auto justify-content-between" data-aos="fade-down-right"
+                    data-aos-duration="600">
+                    <a target="_blank" :href="post.socialsLinks?.github"><i class="fab fa-github"></i></a>
+                    <a target="_blank" :href="post.socialsLinks?.instagram"><i class="fab fa-instagram"></i></a>
+                    <a target="_blank" :href="post.socialsLinks?.twitter"><i class="fab fa-twitter"></i></a>
+                    <a target="_blank" :href="post.socialsLinks?.linkedin"><i class="fab fa-linkedin-in"></i></a>
+                    <a target="_blank" :href="post.socialsLinks?.whatsapp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+                <p class="socials-mobile-m" data-aos="fade-down-left" data-aos-duration="600"><a
+                        href="mailto:elfriedv16@gmail.com" class="fw-light">elfriedv16@gmail.com</a></p>
+                <p class="fw-light">Designed & Built By Fortunatus EK <br> Fortunatus EK - &copy; 2022</p>
+            </div>
+        </footer>
+        <div class="socials d-none d-lg-block d-md-none d-sm-none-i position-fixed bottom-0 d-flex flex-column opacity-75 h-50"
+            style="left: 4%;" data-aos="fade-down-right" data-aos-duration="600">
+            <div class="d-flex flex-column h-75 justify-content-between">
+                <a target="_blank" :href="post.socialsLinks?.github"><i class="fab fa-github"></i></a>
+                <a target="_blank" :href="post.socialsLinks?.instagram"><i class="fab fa-instagram"></i></a>
+                <a target="_blank" :href="post.socialsLinks?.twitter"><i class="fab fa-twitter"></i></a>
+                <a target="_blank" :href="post.socialsLinks?.linkedin"><i class="fab fa-linkedin-in"></i></a>
+                <a target="_blank" :href="post.socialsLinks?.whatsapp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <div class="h-25 mt-4">
+                <div class="line h-100 mx-auto"></div>
+            </div>
+        </div>
+        <div class="contacts d-none d-lg-block d-md-none d-sm-none position-fixed bottom-0 d-flex flex-column opacity-75 h-35 end-0"
+            data-aos="fade-down-right" data-aos-duration="600">
+            <div class="h-75"><a href="mailto:elfriedv16@gmail.com" class="fw-light myAddress d-block">Email :
+                    elfriedv16@gmail.com</a></div>
+            <div class="h-50 mt-4">
+                <div class="line h-100 mx-auto"></div>
+            </div>
+        </div>
+        <div class="nav-mobile position-absolute d-none d-flex flex-column top-0 start-0 w-100 h-100 animate__animated animate__bounceInLeft"
+            style="z-index: 50">
+            <div class="w-100 text-end pe-2 mt-2">
+                <a href="javascript:void(0)"><i class="nav-close fa fa-close color-link fa-2x"></i></a>
+            </div>
+            <div class="w-50 fw-bold mx-auto">
+                <div class="my-5" v-for='nav in post.headers?.navs'><a :href="'#' + nav.tag"><span
+                            class="color-link me-1">+ </span>{{ nav.name }}</a></div>
+                <div class="my-5"><a :href="post.headers?.cvLink" class="link-styled"
+                        style="padding: 10px 15px;">Resume</a></div>
+                <div class="color-link me-1"><select v-model="lang" name="lang" id="Lang"
+                        class="form-select link-styled border-0 ps-0 px-2 py-1" style="background-color: inherit;"
+                        @onchange>
+                        <option value="fr">French</option>
+                        <option value="en">English</option>
+                    </select></div>
+            </div>
+        </div>
         <footer class="" style="margin-top: 150px;">
             <div class="text-center">
                 <div class="socials-mobile d-flex mb-3 w-75 mx-auto justify-content-between">
@@ -113,11 +182,13 @@
                     <a href="#"><i class="fab fa-linkedin-in"></i></a>
                     <a href="#"><i class="fab fa-codepen"></i></a>
                 </div>
-                <p class="socials-mobile-m"><a href="mailto:elfriedv16@gmail.com" class="fw-light">elfriedv16@gmail.com</a></p>
+                <p class="socials-mobile-m"><a href="mailto:elfriedv16@gmail.com"
+                        class="fw-light">elfriedv16@gmail.com</a></p>
                 <p class="fw-light">Designed & Built By Fortunatus EK <br> Fortunatus EK - &copy; 2022</p>
             </div>
         </footer>
-        <div class="socials d-none d-lg-block d-md-none d-sm-none-i position-fixed bottom-0 d-flex flex-column opacity-75 h-50" style="left: 4%;">
+        <div class="socials d-none d-lg-block d-md-none d-sm-none-i position-fixed bottom-0 d-flex flex-column opacity-75 h-50"
+            style="left: 4%;">
             <div class="d-flex flex-column h-75 justify-content-between">
                 <a href="#"><i class="fab fa-github"></i></a>
                 <a href="#"><i class="fab fa-instagram"></i></a>
@@ -129,24 +200,28 @@
                 <div class="line h-100 mx-auto"></div>
             </div>
         </div>
-        <div class="contacts d-none d-lg-block d-md-none d-sm-none position-fixed bottom-0 d-flex flex-column opacity-75 h-35 end-0">
-            <div class="h-75"><a href="mailto:elfriedv16@gmail.com" class="fw-light myAddress d-block">elfried.fortunatus@gmail.com</a></div>
+        <div
+            class="contacts d-none d-lg-block d-md-none d-sm-none position-fixed bottom-0 d-flex flex-column opacity-75 h-35 end-0">
+            <div class="h-75"><a href="mailto:elfriedv16@gmail.com"
+                    class="fw-light myAddress d-block">elfried.fortunatus@gmail.com</a></div>
             <div class="h-50 mt-4">
                 <div class="line h-100 mx-auto"></div>
             </div>
         </div>
-        <div class="nav-mobile position-absolute d-none d-flex flex-column top-0 start-0 w-100 h-100" style="z-index: 50">
+        <div class="nav-mobile position-absolute d-none d-flex flex-column top-0 start-0 w-100 h-100"
+            style="z-index: 50">
             <div class="w-100 text-end pe-2 mt-2">
                 <a href="javascript:void(0)"><i class="nav-close fa fa-close color-link fa-2x"></i></a>
             </div>
             <div class="w-50 fw-bold mx-auto">
-                <div class="my-5" v-for='nav in post.headers?.navs'><a href="#"><span class="color-link me-1">01.</span>{{ nav }}</a></div>
+                <div class="my-5" v-for='nav in post.headers?.navs'><a href="#"><span
+                            class="color-link me-1">01.</span>{{ nav }}</a></div>
                 <div><a :href="post.headers?.cvLink" class="link-styled" style="padding: 10px 15px;">Resume</a></div>
             </div>
         </div>
 
     </div>
-    <script src="/static/vendors/vue/vue.global.js"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.prod.js"></script>
     <script src="./static/js/app.js" type="module"></script>
 </body>
 
