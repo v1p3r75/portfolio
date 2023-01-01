@@ -8,7 +8,7 @@
 
 }
 
-html, body {width: 100%; overflow: auto!important;} a {text-decoration: none; color: inherit}
+html, body {width: 100%; overflow-y: auto!important;} a {text-decoration: none; color: inherit}
 #pageContent {background-color: var(--bg-color)!important; padding: 3%; color : var(--color-first)}
 .logo {width: 50px; height: 50px; padding: 8px; border: 2px solid var(--color-link); border-radius: 30px;}
 .color-link {color: var(--color-link);} .bg-color {background-color: var(--bg-color)} .bg-color-1 {background-color: var(--color-link);}
@@ -46,7 +46,7 @@ article .desc a, .entreprise a {color: var(--color-second);}
     .project-desc {background-color: inherit!important; right: 0!important; padding: 0!important; margin: 0!important; min-width: 100%!important;}
     .project-desc p, .source-links {margin: 10px 0!important}
     .article, .form, .line-1 > div , .localisation{width: 100%!important}
-    
+    .description {width: 100%!important; margin-left: 0!important;}
 
 }
 
