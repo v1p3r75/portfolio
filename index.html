@@ -64,7 +64,7 @@
                     post.banner?.subtitle }}</h1>
                 <p class="banner-desc w-50 my-4" data-aos="fade-down-right" data-aos-duration="800"
                     v-html='post.banner?.desc'></p>
-                <a href="#" class="link-styled d-inline-block" data-aos="fade-down-right" data-aos-duration="900">{{post.banner?.projectAlias}}</a>
+                <a :href="'#' + post.headers?.navs[2].tag" class="link-styled d-inline-block" data-aos="fade-down-right" data-aos-duration="900">{{post.banner?.projectAlias}}</a>
             </div>
             <article style="padding-left: 5%;" :id="post.headers?.navs[0].tag">
                 <h3 class="w-65" data-aos="fade-up-right" data-aos-duration="1000"><span class="me-2"><span
