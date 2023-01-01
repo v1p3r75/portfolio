@@ -159,13 +159,13 @@
                 </div>
             </article> -->
             <article :id="post.headers?.navs[3].tag">
-                <h5 class="text-capitalize text-center mb-5"><span class="fw-light color-link">04.</span>{{post.headers?.navs[3].name}}
+                <h5 class="text-capitalize text-center mb-5" data-aos="fade-down-top" data-aos-duration="600"><span class="fw-light color-link">04.</span>{{post.headers?.navs[3].name}}
                 </h5>
                 <div class="d-lg-flex mt-5">
                     <div class="form w-50 me-3 mb-3">
-                        <h2 class="color-link">{{post.contacts?.title}}</h2>
-                        <p class="my-5 fw-light">{{post.contacts?.text}}</p>
-                        <form action="https://formspree.io/f/xknannoy" method="POST">
+                        <h2 class="color-link" data-aos="fade-down-right" data-aos-duration="700">{{post.contacts?.title}}</h2>
+                        <p class="my-5 fw-light" data-aos="fade-down-left" data-aos-duration="800">{{post.contacts?.text}}</p>
+                        <form action="https://formspree.io/f/xknannoy" method="POST" data-aos="fade-down-bottom" data-aos-duration="850">
                             <div class="line-1 d-lg-flex w-100">
                                 <div class="name w-50 me-2 mt-2"><input type="text" name="name" placeholder="Name"
                                         class="form-control w-100 p-2"></div>
@@ -181,8 +181,9 @@
                             </div>
                         </form>
                     </div>
-                    <div class="localisation w-50 h-100">
+                    <div class="localisation position-relative w-50 h-100">
                         <img :src="post.contacts?.positionImg" alt="Fortunatus EK localisation" class="w-100 h-100">
+                        <div class="surface-fill-3 photo position-absolute w-100 h-100 top-0 bottom-0"></div>
                     </div>
                 </div>
 
@@ -190,16 +191,16 @@
         </section>
         <footer class="" style="margin-top: 150px;">
             <div class="text-center">
-                <div class="socials-mobile d-flex mb-3 w-75 mx-auto justify-content-between">
+                <div class="socials-mobile d-flex mb-3 w-75 mx-auto justify-content-between" data-aos="fade-down-right" data-aos-duration="600">
                     <a target="_blank" :href="post.socialsLinks?.github"><i class="fab fa-github"></i></a>
                     <a target="_blank" :href="post.socialsLinks?.instagram"><i class="fab fa-instagram"></i></a>
                     <a target="_blank" :href="post.socialsLinks?.twitter"><i class="fab fa-twitter"></i></a>
                     <a target="_blank" :href="post.socialsLinks?.linkedin"><i class="fab fa-linkedin-in"></i></a>
                     <a target="_blank" :href="post.socialsLinks?.whatsapp"><i class="fab fa-whatsapp"></i></a>
                 </div>
-                <p class="socials-mobile-m"><a href="mailto:elfriedv16@gmail.com"
+                <p class="socials-mobile-m" data-aos="fade-down-left" data-aos-duration="600"><a href="mailto:elfriedv16@gmail.com"
                         class="fw-light">elfriedv16@gmail.com</a></p>
-                <p class="fw-light">Designed & Built By Fortunatus EK <br> Fortunatus EK - &copy; 2022</p>
+                <p class="fw-light" >Designed & Built By Fortunatus EK <br> Fortunatus EK - &copy; 2022</p>
             </div>
         </footer>
         <div class="socials d-none d-lg-block d-md-none d-sm-none-i position-fixed bottom-0 d-flex flex-column opacity-75 h-50"
