@@ -45,7 +45,7 @@ const fr = {
       '...'
     ],
     "myImage": {
-      "src": "./static/img/me.jpg",
+      "src": "/static/img/fortunatus-ek.jpg",
       "alt": "Elfried Fortunatus KIDJE"
     }
   },
