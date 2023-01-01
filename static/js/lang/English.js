@@ -83,7 +83,7 @@ const en = {
         'classDescText': 'text-end',
         'style': {right: '20%'},
         'description' : "Neptune is a stock management web application with automatic billing system, inventory management of various shops.",
-        'techs': ['HTML5', 'CSS', 'JavaScript', 'Jquery', 'PHP', 'CodeIgniter4'],
+        'techs': ['HTML5', 'CSS', 'JavaScript', 'Jquery', 'PHP', 'cI4'],
         'links': {
           'github' : 'http://github.com/v1p3r75/Neptune',
           'external' : 'http://fortunatus-ek.vercel.app',

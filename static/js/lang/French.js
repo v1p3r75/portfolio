@@ -85,7 +85,7 @@ const fr = {
       'classDescText': 'text-end',
       'style': {right: '20%'},
       'description' : "Neptune est une application web de gestion de stock avec système de facturation automatique, gestion des stocks des différentes boutiques.",
-      'techs': ['HTML5', 'CSS', 'JavaScript', 'Jquery', 'PHP', 'CodeIgniter4'],
+      'techs': ['HTML5', 'CSS', 'JavaScript', 'Jquery', 'PHP', 'cI4'],
       'links': {
         'github' : 'http://github.com/v1p3r75/Neptune',
         'external' : 'http://fortunatus-ek.vercel.app',
