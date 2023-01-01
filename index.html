@@ -168,20 +168,20 @@
                         <form action="https://formspree.io/f/xknannoy" method="POST" data-aos="fade-down-bottom" data-aos-duration="850">
                             <div class="line-1 d-lg-flex w-100">
                                 <div class="name w-50 me-2 mt-2"><input type="text" name="name" placeholder="Name"
-                                        class="form-control w-100 p-2"></div>
+                                        class="form-control w-100 p-2" required></div>
                                 <div class="email w-50 mt-2"><input type="text" name="email" placeholder="Email"
-                                        class="form-control w-100 p-2"></div>
+                                        class="form-control w-100 p-2" required></div>
                             </div>
                             <div class="subject w-100 me-2 mt-2"><input type="text" name="subject" placeholder="Subject"
-                                    class="form-control w-100 p-2"></div>
+                                    class="form-control w-100 p-2" required></div>
                             <textarea name="message" id="" cols="30" rows="10" class="form-control mt-2"
-                                placeholder="Message"></textarea>
+                                placeholder="Message" required></textarea>
                             <div class="mt-2 text-center">
                                 <button href="#" style="background-color: inherit;" class="link-styled d-inline-block" type="submit">{{post.contacts?.textButton}}</button>
                             </div>
                         </form>
                     </div>
-                    <div class="localisation position-relative w-50 h-100">
+                    <div class="localisation position-relative w-50 h-100" data-aos="fade-down-right" data-aos-duration="600">
                         <img :src="post.contacts?.positionImg" alt="Fortunatus EK localisation" class="w-100 h-100">
                         <div class="surface-fill-3 photo position-absolute w-100 h-100 top-0 bottom-0"></div>
                     </div>
