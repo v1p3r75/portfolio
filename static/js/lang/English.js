@@ -9,14 +9,14 @@ const en = {
     "headers": {
       "logo": "F",
       "navs": [
-        { "name" : "About", "tag": "#About"},
-        { "name" : "Experience", "tag": "#Experiences"},
-        { "name" : "Works", "tag": "#Projects"},
-        { "name" : "Contact", "tag": "#Contacts"},
+        { "name" : "About", "tag": "About"},
+        { "name" : "Experience", "tag": "Experiences"},
+        { "name" : "Works", "tag": "Projects"},
+        { "name" : "Contact", "tag": "Contacts"},
       ],
       "navsTag": ["#About","#Experiences", "#Projects", "#Contacts"],
       "cvText": "Resume",
-      "cvLink": "#cvLink"
+      "cvLink": "/static/files/cv-elfried-fortunatus-kidje.pdf"
     },
     "banner": {
       "hello": "Hi, my name is",

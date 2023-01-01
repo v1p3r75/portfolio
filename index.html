@@ -32,7 +32,7 @@
             </div>
             <nav class="d-none d-sm-none d-md-none d-lg-block">
                 <ul class="d-flex list-unstyled fw-light">
-                    <li class="me-3" v-for='nav in post.headers?.navs'><a :href="nav.tag"><span
+                    <li class="me-3" v-for='nav in post.headers?.navs'><a :href="'#' + nav.tag"><span
                                 class="color-link me-1">+</span>{{ nav.name }}</a></li>
                     <li><a :href="post.headers?.cvLink" class="link-styled" style="padding: 10px 15px;">{{post.headers?.cvText}}</a></li>
                     <li class="color-link me-1"><select v-model="lang" name="lang" id="Lang" class="form-select link-styled border-0 ms-3 px-3 py-1" style="background-color: inherit;" @onchange>
@@ -58,7 +58,7 @@
                 <a href="#" class="link-styled d-inline-block" data-aos="fade-down-right" data-aos-duration="900">Check
                     out my course !</a>
             </div>
-            <article style="padding-left: 5%;" id="AboutMe">
+            <article style="padding-left: 5%;" :id="post.headers?.navs[0].tag">
                 <h3 class="w-65" data-aos="fade-up-right" data-aos-duration="1000"><span class="me-2"><span
                             class="color-link me-2 fw-light">01.</span>{{post.headers?.navs[0].name}}</span><span
                         class="bar opacity-25"></span></h3>
@@ -84,7 +84,7 @@
                     </div>
                 </div>
             </article>
-            <article style="padding-left: 13%;" :id="post.headers?.navs[2].tag">
+            <article style="padding-left: 13%;" :id="post.headers?.navs[1].tag">
                 <h3 class="w-75" data-aos="fade-down-right" data-aos-duration="600"><span class="me-2"><span
                             class="color-link me-2 fw-light">02.</span>{{post.headers?.navs[1].name}}</span><span
                         class="bar opacity-25 w-50"></span></h3>
@@ -103,7 +103,7 @@
                     </div>
                 </div>
             </article>
-            <article id="Works">
+            <article :id="post.headers?.navs[2].tag">
                 <h3 class="w-75" data-aos="fade-down-right" data-aos-duration="600"><span class="me-2"><span
                             class="color-link me-2 fw-light">02.</span>{{post.headers?.navs[2].name}}</span><span
                         class="bar opacity-25 w-50"></span></h3>
@@ -158,7 +158,7 @@
                     <a href="#" class="link-styled d-inline-block">More Articles</a>
                 </div>
             </article> -->
-            <article>
+            <article :id="post.headers?.navs[3].tag">
                 <h5 class="text-capitalize text-center mb-5"><span class="fw-light color-link">04.</span>{{post.headers?.navs[3].name}}
                 </h5>
                 <div class="d-lg-flex mt-5">
@@ -229,7 +229,7 @@
                 <a href="javascript:void(0)"><i class="nav-close fa fa-close color-link fa-2x"></i></a>
             </div>
             <div class="w-50 fw-bold mx-auto">
-                <div class="my-5" v-for='nav in post.headers?.navs'><a href="#"><span
+                <div class="my-5" v-for='nav in post.headers?.navs'><a :href="'#' + nav.tag"><span
                             class="color-link me-1">01.</span>{{ nav.name }}</a></div>
                 <div class="my-5"><a :href="post.headers?.cvLink" class="link-styled" style="padding: 10px 15px;">Resume</a></div>
                 <div class="color-link me-1"><select v-model="lang" name="lang" id="Lang" class="form-select link-styled border-0 ps-0 px-2 py-1" style="background-color: inherit;" @onchange>

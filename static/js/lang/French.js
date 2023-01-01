@@ -10,10 +10,10 @@ const fr = {
   "headers": {
     "logo": "F",
     "navs": [
-      { "name" : "A propos", "tag": "#About"},
-      { "name" : "Expériences", "tag": "#Experiences"},
-      { "name" : "Mes Projets", "tag": "#Projects"},
-      { "name" : "Contacts", "tag": "#Contacts"},
+      { "name" : "A propos", "tag": "About"},
+      { "name" : "Expériences", "tag": "Experiences"},
+      { "name" : "Mes Projets", "tag": "Projects"},
+      { "name" : "Contacts", "tag": "Contacts"},
     ],
     "navsTag": ["#About","#Experiences", "#Projects", "#Contacts"],
     "cvText": "Mon CV",

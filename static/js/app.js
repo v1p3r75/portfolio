@@ -36,12 +36,16 @@ const app = Vue.createApp({
         }
     },
     mounted() {
-    	AOS.init()
-        document.querySelector('#preload-img').classList.add('d-none')
-        this.setLang()
-        this.currentEnterprise = this.post.enterprises?.names[0]
-        document.querySelector('.nav-close').addEventListener('click', (e) => document.querySelector('.nav-mobile').classList.add('d-none'))
-        document.querySelector('.options-bars').addEventListener('click', (e) => document.querySelector('.nav-mobile').classList.remove('d-none'))
+        let navMobile = document.querySelector(".nav-mobile");
+    	AOS.init();
+        document.querySelector('#preload-img').classList.add('d-none');
+        this.setLang();
+        this.currentEnterprise = this.post.enterprises?.names[0];
+        navMobile.addEventListener("click", function(e){
+            if(e.target.nodeName === "A") return navMobile.classList.add('d-none');
+        })
+        document.querySelector('.nav-close').addEventListener('click', (e) => navMobile.classList.add('d-none'))
+        document.querySelector('.options-bars').addEventListener('click', (e) => navMobile.classList.remove('d-none'))
     }
 
 });
