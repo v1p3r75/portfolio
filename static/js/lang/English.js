@@ -69,7 +69,7 @@ const en = {
           "post": "Stagiaire",
           "startDate": "Juin 2020",
           "endDate": "Septembre 2020",
-          "roles": "<p class='fw-normal'><i class='fa fa-arrow-right me-3 color-link'></i>Improved my level in HTML5, CSS3, Bootstrap 5.</p>< p class='fw-normal'><i class='fa fa-arrow-right me-3 color-link'></i>Make websites dynamic with JavaScript and jQuery.</p>"
+          "roles": "<p class='fw-normal'><i class='fa fa-arrow-right me-3 color-link'></i>Improved my level in HTML5, CSS3, Bootstrap 5.</p><p class='fw-normal'><i class='fa fa-arrow-right me-3 color-link'></i>Make websites dynamic with JavaScript and jQuery.</p>"
         },
       }
     },
