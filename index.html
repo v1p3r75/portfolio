@@ -182,7 +182,7 @@
                         </form>
                     </div>
                     <div class="localisation w-50 h-100">
-                        <img src="./static/img/localisation.png" alt="Fortunatus EK localisation" class="w-100 h-100">
+                        <img :src="post.contacts?.positionImg" alt="Fortunatus EK localisation" class="w-100 h-100">
                     </div>
                 </div>
 
@@ -230,7 +230,7 @@
             </div>
             <div class="w-50 fw-bold mx-auto">
                 <div class="my-5" v-for='nav in post.headers?.navs'><a :href="'#' + nav.tag"><span
-                            class="color-link me-1">01.</span>{{ nav.name }}</a></div>
+                            class="color-link me-1">+ </span>{{ nav.name }}</a></div>
                 <div class="my-5"><a :href="post.headers?.cvLink" class="link-styled" style="padding: 10px 15px;">Resume</a></div>
                 <div class="color-link me-1"><select v-model="lang" name="lang" id="Lang" class="form-select link-styled border-0 ps-0 px-2 py-1" style="background-color: inherit;" @onchange>
                     <option value="fr">French</option><option value="en">English</option>

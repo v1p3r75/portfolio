@@ -125,6 +125,7 @@ const fr = {
     'title' : 'Me Contacter',
     'text' : 'Avez-vous un projet en tête où vous voulez-vous me contacter pour une raison ? Veillez remplir ce formulaire ci-dessous et cliquer sur Envoyer',
     'textButton' : 'Envoyer',
+    'positionImg': '/static/img/position.png',
   },
   "socialsLinks": {
     'github' : 'https://www.github.com/v1p3r75',

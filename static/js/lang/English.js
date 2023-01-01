@@ -123,6 +123,8 @@ const en = {
       'title' : 'Contact Me',
       'text' : 'Do you have a project in mind where you want to contact me for a reason? Please complete this form below and click Submit',
       'textButton' : 'Submit',
+      'positionImg': '/static/img/position.png',
+
     },
     "socialsLinks": {
       'github' : 'https://www.github.com/v1p3r75',
