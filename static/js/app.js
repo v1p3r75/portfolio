@@ -13,7 +13,7 @@ const app = Vue.createApp({
 
         return {
             currentEnterprise : '',
-            lang : 'en',
+            lang : 'fr',
             post: [],
         }
     },
