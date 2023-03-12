@@ -26,7 +26,7 @@ const en = {
       "projectAlias": "Watch my projects",
     },
     "about": {
-      "desc": "<p>I'm ELfried Fortunatus KIDJE. After graduating as a Computer Installation and Maintenance Technician in 2021, I completed various professional internships and worked under fixed-term contracts in various companies operating in the fields of <span class='color-link'>mobile & web programming.</span> I sold my first software when I was in high school. For the development of applications and websites, I mainly use <span class='color-link'>laravel and symfony </span>for the creation, redesign and maintenance of websites and web applications without forgetting the essential tools of front-end development such as html, css and javascript. I also master <span class='color-link'> Node.js, AngularJS, VueJS, ReactJs, Python (Django) technologies.</span> I know how to design management applications (stocks, human resources, invoicing, ERP, CRM) for companies whatever their size. I can also develop applications that can allow you to interact with maps or plans. I developed a human resources management application and an invoicing application on behalf of BHT SARL, which has around ten shops. I was a <span class='color-link'> backend developer</span> within the company Ellipse Software which allowed me to work in a team on several interesting projects. Currently I am a fullstack developer within the startup FuturaVision which specializes in <span class='color-link'>the design of Web & mobile applications.</span></p><p>Here is a list of technologies I had to use during the projects: </p>",
+      "desc": "<p>My name is Elfried Fortunatus KIDJE. As a <span class='color-link'>full stack web developer</span>, I have gained extensive experience using a variety of technologies to create innovative and efficient web applications, both in frontend and in backend.<p>In frontend, I use <span class='color-link'>HTML3, CSS3, JavaScript (ES5+), TypeScript, jQuery, ReactJS and VueJS</span> to create responsive and user-friendly user interfaces. I also use Bootstrap to improve user experience by creating responsive and engaging websites.</p><p>Backend I am proficient in <span class='color-link'>PHP ( Laravel ) and NodeJS </span> to develop robust RESTful APIs and scalable web applications. I also have a solid experience in CodeIgniter, which allows me to create fast and secure web applications and some knowledge of the <span class='color-link'>Python3 (Django)</span> language. Without forgetting the management of databases with <span class='color-link'>MySQL or PostgreSQL</span>.</p><p>In mobile programming, I use the technology <span class='color- link'>React Native</p> for designing mobile applications in a fast and efficient way.</p><p>In addition, I am proficient in the use of <span class='color-link'>distributions Linux</span>, as well as in version management tools such as <span class='color-link'>Git / Bitbucket</span>. I am also comfortable with <span class='color-link'>Docker</span> containers for web application deployment.</p><p>I am passionate about software development and I I have a strong history of working with cross-functional teams to deliver innovative, tailored solutions to my clients. I'm always learning and keeping up to date with the latest web development trends and technologies, and I enjoy sharing my knowledge with other team members.</p><p>If you are looking for an experienced and passionate full stack web developer who can work effectively in a team, I would be happy to discuss your needs and help you achieve your goals. Feel free to contact me to discuss your project and how I could contribute to it.</p><p>Summary of the technologies I used: </p>",
       "techs": [
         "<i class='fab fa-html5 me-2'></i><span>HTML5/CSS3</span>",
         "<i class='fab fa-js me-2'></i><span>JavaScript (ES5+)</span>",
@@ -40,7 +40,7 @@ const en = {
         "<i class='fab fa-node me-2'></i><span>NodeJs</span>",
         "<i class='fa fa-code me-2'></i><span>TypeScript</span>",
         "<i class='fa fa-mobile me-2'></i><span>React Native</span>",
-        "<i class='fa fa-mobile me-2'></i><span>Flutter</span>",
+        "<i class='fa fa-mobile me-2'></i><span>Docker</span>",
         '...'
       ],
       "myImage": {
@@ -53,21 +53,21 @@ const en = {
       "desc" : {
           "Futura Vision" : {
             "name": "Futura Vision",
-            "post": "Developpeur Web & Mobile",
+            "post": "Web & Mobile Developer",
             "startDate": "2022",
             "endDate": "Present",
             "roles": "<p class='fw-normal'><i class='fa fa-arrow-right me-3 color-link'></i>I'm currently working on several projects as a full stack developer.</ p><p class='fw-normal'><i class='fa fa-arrow-right me-3 color-link'></i>We mostly work as Freelancers.</p>"
           },
         "Ellipse Software" : {
           "name": "ELlipse Software",
-            "post": "Developpeur BackEnd",
+            "post": "Backend Developer",
             "startDate": "Jan 2021",
             "endDate": "Jan 2022",
             "roles": "<p class='fw-normal'><i class='fa fa-arrow-right me-3 color-link'></i>Realization of the Immobilia project (a real estate rental platform) as a backend developer.</p><p class='fw-normal'><i class='fa fa-arrow-right me-3 color-link'></i>Learning in backend programming with technologies (framework) CodeIgniter4 and Laravel.</p><p class='fw-normal'><i class='fa fa-arrow-right me-3 color-link'></i>Using ReactJS / VueJS framework for development Frontend.</p>"
         },
         "Clic Almani Sarl" : {
           "name": "Clic Almani Sarl",
-          "post": "Stagiaire",
+          "post": "Frontend Developer",
           "startDate": "Juin 2020",
           "endDate": "Septembre 2020",
           "roles": "<p class='fw-normal'><i class='fa fa-arrow-right me-3 color-link'></i>Improved my level in HTML5, CSS3, Bootstrap 5.</p><p class='fw-normal'><i class='fa fa-arrow-right me-3 color-link'></i>Make websites dynamic with JavaScript and jQuery.</p>"

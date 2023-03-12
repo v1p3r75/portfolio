@@ -27,7 +27,7 @@ const fr = {
     "projectAlias": "Regarder mes projets"
   },
   "about": {
-    "desc": "<p>Je me nomme Elfried Fortunatus KIDJE. Après avoir obtenu le diplôme du Technicien en Installation et Maintenance Informatique en 2021, j'ai effectué divers stages professionnels et travaillé sous contrat à durée déterminée dans diverses entreprises exerçant dans les domaines de la <span class='color-link'>Programmation mobile & web</span>. J'ai vendu mon premier logiciel lorsque j'étais Lycéen. Pour le développement d'applications et de sites web, j'utilise principalement <span class='color-link'>laravel et symfony</span> pour la création, la refonte et la maintenance de sites web et d'applications web sans oublier les outils essentiels du développent front-end tels que html, css et javascript. Je maîtrise également <span class='color-link'>les technologies Node.js, AngularJS, VueJS, ReactJs, Python (Django)</span>. Je sais concevoir des applications de gestion (stocks, ressources humaines, facturation, ERP, CRM) pour les entreprises quelque soient leur taille. Je peux également développer des applications qui peuvent permettre d'interagir avec des cartes ou des plans.J'ai développé une application de gestion des ressources humaines et une application de facturation pour le compte de BHT SARL qui compte une dizaine de boutiques. J'ai été <span class='color-link'>developpeur backend</span> au sein de la société Ellipse Software ce qui m'a permit de travailler en équipe sur plusieurs projets intérressants. Actuellement je suis développeur fullstack au sein de la startup FuturaVision qui est spécialisée dans <span class='color-link'>la conception d'application Web & mobile.</p><p>Voici une liste des technologies que j'ai eu à utiliser pendant les projets : </p>",
+    "desc": "<p>Je me nomme Elfried Fortunatus KIDJE. En tant que <span class='color-link'>développeur web full stack</span>, j'ai acquis une vaste expérience en utilisant une variété de technologies pour créer des applications web innovantes et efficaces, tant en frontend qu'en backend.<p>En frontend, j'utilise <span class='color-link'>HTML3, CSS3, JavaScript (ES5+), TypeScript, jQuery, ReactJS et VueJS</span> pour créer des interfaces utilisateur réactives et conviviales. J'utilise également Bootstrap pour améliorer l'expérience utilisateur en créant des sites web adaptatifs et attrayants.</p><p>En backend, je suis compétent en <span class='color-link'>PHP ( Laravel ) et NodeJS</span> pour développer des API RESTful robustes et des applications web évolutives. J'ai également une expérience solide en CodeIgniter, qui me permet de créer des applications web rapides et sécurisées et quelques connaissances en langage <span class='color-link'>Python3 (Django)</span>. Sans oublier la gestion des bases de données avec <span class='color-link'>MySQL ou PostgreSQL</span>.</p><p>En programmation mobile, j'utilise la technologie <span class='color-link'>React Native</p> pour la conception des applications mobiles performant et de manière rapide.</p><p>En outre, je suis compétent dans l'utilisation de <span class='color-link'>distributions Linux</span>, ainsi que dans les outils de gestion de version tels que <span class='color-link'>Git / Bitbucket</span>. Je suis également à l'aise avec les conteneurs <span class='color-link'>Docker</span> pour le déploiement d'applications web.</p><p>Je suis passionné par le développement de logiciels et j'ai un solide historique de collaboration avec des équipes inter fonctionnelles pour fournir des solutions innovantes et sur mesure à mes clients. Je suis toujours en train d'apprendre et de me tenir au courant des dernières tendances et technologies en matière de développement web, et j'aime partager mes connaissances avec les autres membres de l'équipe.</p><p>Si vous cherchez un développeur web full stack expérimenté et passionné qui peut travailler efficacement en équipe, je serais ravi de discuter de vos besoins et de vous aider à atteindre vos objectifs. N'hésitez pas à me contacter pour discuter de votre projet et de la manière dont je pourrais y contribuer.</p><p>Récapitulatif des technologies que j'ai utilisées : </p>",
 
     "techs": [
       "<i class='fab fa-html5 me-2'></i><span>HTML5/CSS3</span>",
@@ -42,7 +42,7 @@ const fr = {
       "<i class='fab fa-node me-2'></i><span>NodeJs</span>",
       "<i class='fa fa-code me-2'></i><span>TypeScript</span>",
       "<i class='fa fa-mobile me-2'></i><span>React Native</span>",
-      "<i class='fa fa-mobile me-2'></i><span>Flutter</span>",
+      "<i class='fa fa-mobile me-2'></i><span>Docker</span>",
       '...'
     ],
     "myImage": {
@@ -69,7 +69,7 @@ const fr = {
       },
       "Clic Almani Sarl" : {
         "name": "Clic Almani Sarl",
-        "post": "Stagiaire",
+        "post": "Developpeur Frontend",
         "startDate": "Juin 2020",
         "endDate": "Septembre 2020",
         "roles": "<p class='fw-normal'><i class='fa fa-arrow-right me-3 color-link'></i>Amélioration de mon niveau en HTML5, CSS3, Bootstrap 5.</p><p class='fw-normal'><i class='fa fa-arrow-right me-3 color-link'></i>Rendre les sites web dynamiques avec le JavaScript et jQuery.</p>"
