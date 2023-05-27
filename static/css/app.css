@@ -11,7 +11,8 @@
 html, body {width: 100%; overflow-y: auto!important;} a {text-decoration: none; color: inherit}
 #pageContent {background-color: var(--bg-color)!important; padding: 3%; color : var(--color-first)}
 .logo {width: 50px; height: 50px; padding: 8px; border: 2px solid var(--color-link); border-radius: 30px;}
-.color-link {color: var(--color-link);} .bg-color {background-color: var(--bg-color)} .bg-color-1 {background-color: var(--color-link);}
+.color-link {color: var(--color-link);} .color-link-i {color: var(--color-link)!important;} 
+.bg-color {background-color: var(--bg-color)} .bg-color-1 {background-color: var(--color-link);}
 .link-styled {padding : 15px 25px; color: var(--color-link); border: 1px solid var(--color-link); border-radius: 5px;}
 section {margin-top: 100px; padding: 0 10%;} section article {margin-top: 150px;}
 p {color: var(--color-second); font-weight: 600!important;}
@@ -22,6 +23,7 @@ p {color: var(--color-second); font-weight: 600!important;}
 article .desc a, .entreprise a {color: var(--color-second);}
 .w-65 {width: 65%;} .h-35 {height: 35%;} .bar {display: inline-block; width: 70%;height: 1px; background-color: var(--color-first); vertical-align: middle;}
 .entreprise a {display: block; padding: 10px 15px;}
+.entreprise a:nth-child(1) { color: var(--color-link)!important;}
 .project-desc{background-color: var(--color-bg); min-width: 120%; max-width: 160%; min-height: 100px; max-height: auto; z-index: 3;}
 /* .works .project-desc:nth-child(2n+1){right: 20%} */
 .techs span {margin-right: 8px;} .works > div {margin-top: 100px;}

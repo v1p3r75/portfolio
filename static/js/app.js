@@ -21,6 +21,13 @@ const app = Vue.createApp({
     methods: {
         changeEnterprise: function(e) {
             this.currentEnterprise = e.target.innerText;
+           const childrens = Array.from(e.target.parentElement.children)
+           childrens.forEach((elt, i) => {
+                elt.classList.remove('color-link-i')
+                i === 0 ? elt.style = 'color: var(--color-second)!important' : null
+           })
+           e.target.style = 'color: '
+           e.target.classList.add('color-link-i')
         },
         setLang: function(){
             switch (this.lang) {
