@@ -46,7 +46,7 @@ const fr = {
       '...'
     ],
     "myImage": {
-      "src": "/static/img/fortunatus-ek.jpg",
+      "src": "/static/img/fortunatus-kidje.png",
       "alt": "Elfried Fortunatus KIDJE"
     }
   },
@@ -93,12 +93,26 @@ const fr = {
       }
     },
     {
+      'img': '/static/img/friedshop.png',
+      'type': 'Full Stack',
+      'name' : 'FriedShop',
+      'classRow': 'flex-lg-row-reverse',
+      'classDescText': 'text-start',
+      'style': {right: '0'},
+      'description' : "FriedShop est une plateforme de e-commerce qui permet la vente en ligne d'articles de divers types, avec un système de paiement intégré.",
+      'techs': ['ReactJS', 'Redux', 'Laravel', 'Rest API'],
+      'links': {
+        'github' : 'http://github.com/v1p3r75/friedshop-front-react',
+        'external' : 'http://fortunatus-ek.vercel.app',
+      }
+    },
+    {
       'img': '/static/img/futurajs.png',
       'type': 'Front End',
       'name' : 'FuturaJS',
-      'classRow': 'flex-lg-row-reverse',
-      'classDescText': 'text-start',
-      'style': {right:'0'},
+      'classRow': '',
+      'classDescText': 'text-end',
+      'style': {right:'20%'},
       'description' : "Une petite bibliothèque JavaScript pour les tâches courantes telles que le carrousel, l'exception, le gestionnaire d'animation et plus encore...",
       'techs': ['HTML5', 'CSS', 'JavaScript', 'ES6+'],
       'links': {
@@ -110,9 +124,9 @@ const fr = {
       'img': '/static/img/comfortable.png',
       'type': 'Back End',
       'name' : 'Comfortable PHP',
-      'classRow': '',
-      'classDescText': 'text-end',
-      'style': {right: '20%'},
+      'classRow': 'flex-lg-row-reverse',
+      'classDescText': 'text-start',
+      'style': {right: '0'},
       'description' : "Comfortable est un framework php simple qui permet aux développeurs d'intégrer rapidement leurs sites ou applications web de manière sécurisée et très simple.",
       'techs': ['PHP', 'Apache 2', 'HTML5', 'CSS', 'JavaScript',],
       'links': {

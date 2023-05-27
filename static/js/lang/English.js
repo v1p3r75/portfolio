@@ -44,7 +44,7 @@ const en = {
         '...'
       ],
       "myImage": {
-        "src": "/static/img/fortunatus-ek.jpg",
+        "src": "/static/img/fortunatus-kidje.png",
         "alt": "Elfried Fortunatus KIDJE"
       }
     },
@@ -91,12 +91,26 @@ const en = {
         }
       },
       {
+        'img': '/static/img/friedshop.png',
+        'type': 'Full Stack',
+        'name' : 'FriedShop',
+        'classRow': 'flex-lg-row-reverse',
+        'classDescText': 'text-start',
+        'style': {right: '0'},
+        'description' : "FriedShop is an e-commerce platform that allows the online sale of items of various types, with an integrated payment system.",
+        'techs': ['ReactJS', 'Redux', 'Laravel', 'Rest API'],
+        'links': {
+          'github' : 'http://github.com/v1p3r75/friedshop-front-react',
+          'external' : 'http://fortunatus-ek.vercel.app',
+        }
+      },
+      {
         'img': '/static/img/futurajs.png',
         'type': 'Front End',
         'name' : 'FuturaJS',
-        'classRow': 'flex-lg-row-reverse',
-        'classDescText': 'text-start',
-        'style': {right:'0'},
+        'classRow': '',
+        'classDescText': 'text-end',
+        'style': {right:'20%'},
         'description' : " A small JavaScript library for common tasks such as Carousel, Exception, Animation handler and more...",
         'techs': ['HTML5', 'CSS', 'JavaScript', 'ES6+'],
         'links': {
@@ -108,9 +122,9 @@ const en = {
         'img': '/static/img/comfortable.png',
         'type': 'Back End',
         'name' : 'Comfortable PHP',
-        'classRow': '',
-        'classDescText': 'text-end',
-        'style': {right: '20%'},
+        'classRow': 'flex-lg-row-reverse',
+        'classDescText': 'text-start',
+        'style': {right: '0'},
         'description' : "comfortable is a simple php framework that allows developers to quickly integrate their sites or web applications in a secure and very simple way.",
         'techs': ['PHP', 'Apache 2', 'HTML5', 'CSS', 'JavaScript',],
         'links': {
