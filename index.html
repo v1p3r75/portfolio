@@ -117,7 +117,7 @@
                             class="color-link me-2 fw-light">02.</span>{{post.headers?.navs[2].name}}</span><span
                         class="bar opacity-25 w-50"></span></h3>
                 <div class="works">
-                    <template v-for="project in post.projects">
+                    <template v-for="project in post.projects?.slice(0,4)">
                         <div class="project d-lg-flex position-relative" :class="project.classRow"  data-aos="fade-down-left" data-aos-duration="700">
                             <div class="project-img w-75 bg-dark position-relative" :class="project.class" style="height: 400px">
                                 <img :src="project.img" :alt="project.name + ' Image'" class="w-100 h-100">
