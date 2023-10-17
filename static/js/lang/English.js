@@ -16,7 +16,7 @@ const en = {
       ],
       "navsTag": ["#About","#Experiences", "#Projects", "#Contacts"],
       "cvText": "Resume",
-      "cvLink": "/static/files/kidje-elfried-fortunatus-resume.pdf"
+      "cvLink": "/static/files/kidje-elfried-fortunatus-resume-fr.pdf"
     },
     "banner": {
       "hello": "Hi, my name is",

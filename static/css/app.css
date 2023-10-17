@@ -43,9 +43,10 @@ article .desc a, .entreprise a {color: var(--color-second);}
     .entreprise a { border-left: 0!important; border-bottom: 1px solid var(--color-second)!important}
     .entreprise-active {color: var(--color-link)!important;}
     .about-desc {text-align: justify;}
+    .surface-fill-3 { background-color: rgba(29,71,83,0.96)!important;}
     .project-img {width: 100%!important}
-    .project-description {width: 100%!important; position: absolute!important; top: 0; text-align: left!important; padding: 10px}
-    .project-desc {background-color: inherit!important; right: 0!important; padding: 0!important; margin: 0!important; min-width: 100%!important;}
+    .project-description {width: 100%!important; position: absolute!important; top: 0; text-align: left!important; padding: 10px;}
+    .project-desc {background-color: inherit!important; right: 0!important; padding: 0!important; margin: 0!important; min-width: 100%!important; color: #fff!important;}
     .project-desc p, .source-links {margin: 10px 0!important}
     .article, .form, .line-1 > div , .localisation{width: 100%!important}
     .description {width: 100%!important; margin-left: 0!important;}
