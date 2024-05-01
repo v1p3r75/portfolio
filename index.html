@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Elfried Fortunatus KIDJE - Web & Mobile Developer</title>
+    <title>Elfried Fortunatus KIDJE - Web Developer</title>
     <link rel="icon" href="./favicon.webp" type="image/x-icon">
     <meta name="description" content="I am a passionate software developer. This site is a short summary to describe my journey, my projects and my experiences.">
     <meta name="keywords" content="fortunatus, elfried, kidje, developpeur web, bénin, développeur web bénin, developpeur mobile">
@@ -59,7 +59,7 @@
             <div class="banner w-100">
                 <h5 class="color-link" data-aos="zoom-in" data-aos-duration="500">{{post.banner?.hello}}</h5>
                 <h1 class="fa-5x fw-bold" data-aos="zoom-in" data-aos-duration="600"><abbr
-                        title="Fortunatus Elfried KIDJE" class="text-decoration-none">{{ post.banner?.myName }}</abbr>
+                        title="Elfried Fortunatus KIDJE" class="text-decoration-none">{{ post.banner?.myName }}</abbr>
                 </h1>
                 <h1 class="fa-4x fw-bold opacity-50" data-aos="fade-down-left" data-aos-duration="700">{{
                     post.banner?.subtitle }}</h1>
@@ -117,7 +117,7 @@
                             class="color-link me-2 fw-light">02.</span>{{post.headers?.navs[2].name}}</span><span
                         class="bar opacity-25 w-50"></span></h3>
                 <div class="works">
-                    <template v-for="project in post.projects?.slice(0,4)">
+                    <template v-for="project in post.projects?.slice(0,5)">
                         <div class="project d-lg-flex position-relative" :class="project.classRow"  data-aos="fade-down-left" data-aos-duration="700">
                             <div class="project-img w-75 bg-dark position-relative" :class="project.class" style="height: 400px">
                                 <img :src="project.img" :alt="project.name + ' Image'" class="w-100 h-100">
