@@ -117,7 +117,7 @@
                             class="color-link me-2 fw-light">02.</span>{{post.headers?.navs[2].name}}</span><span
                         class="bar opacity-25 w-50"></span></h3>
                 <div class="works">
-                    <template v-for="project in post.projects?.slice(0,5)">
+                    <template v-for="project in post.projects">
                         <div class="project d-lg-flex position-relative" :class="project.classRow"  data-aos="fade-down-left" data-aos-duration="700">
                             <div class="project-img w-75 bg-dark position-relative" :class="project.class" style="height: 400px">
                                 <img :src="project.img" :alt="project.name + ' Image'" class="w-100 h-100">
@@ -140,7 +140,7 @@
                         </div>
                     </template>
                     <div class="text-center">
-                        <a href="/projects.html" class="link-styled d-inline-block">View More</a>
+                        <a href="https://github.com/v1p3r75?tab=repositories" class="link-styled d-inline-block">Plus (GitHub)</a>
                     </div>
                 </div>
             </article>

@@ -44,7 +44,7 @@ const fr = {
       '...'
     ],
     "myImage": {
-      "src": "/static/img/fortunatus-kidje.png",
+      "src": "/static/img/me-nobg.png",
       "alt": "Elfried Fortunatus KIDJE"
     }
   },
@@ -90,6 +90,20 @@ const fr = {
     }
   },
   "projects": [
+    {
+      'img': '/static/img/afrikflow.png',
+      'type': 'Full Stack',
+      'name' : 'Afrikflow',
+      'classRow': 'flex-lg-row-reverse',
+      'classDescText': 'text-start',
+      'style': {right: '0'},
+      'description' : "AfrikFlow est une application web et mobile révolutionnaire conçue pour faciliter les transactions financières en Afrique de l'Ouest.",
+      'techs': ['ReactJS', 'PHP', 'Laravel', 'REST API'],
+      'links': {
+        'github' : 'https://github.com/v1p3r75',
+        'external' : 'https://afrik-flow-web-app.vercel.app',
+      }
+    },
     {
       'img': '/static/img/friedshop.png',
       'type': 'Full Stack',
@@ -159,22 +173,6 @@ const fr = {
         'external' : 'https://nexa-orm.vercel.app',
       }
     },
-
-    {
-      'img': '/static/img/futurajs.png',
-      'type': 'Front End',
-      'name' : 'FuturaJS',
-      'classRow': '',
-      'classDescText': 'text-end',
-      'style': {right:'20%'},
-      'description' : "Une petite bibliothèque JavaScript pour les tâches courantes telles que le carrousel, l'exception, le gestionnaire d'animation et plus encore...",
-      'techs': ['HTML5', 'CSS', 'JavaScript', 'ES6+'],
-      'links': {
-        'github' : 'https://github.com/v1p3r75/FuturaJS',
-        'external' : 'https://fortunatus-ek.vercel.app',
-      }
-    },
-    
   ],
   "contacts": {
     'title' : 'Me Contacter',

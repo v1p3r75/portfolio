@@ -43,7 +43,7 @@ const en = {
       '...'
     ],
       "myImage": {
-        "src": "/static/img/fortunatus-kidje.png",
+        "src": "/static/img/me-nobg.png",
         "alt": "Elfried Fortunatus KIDJE"
       }
     },
